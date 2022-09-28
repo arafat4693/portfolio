@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Background />
-      <section className="relative z-10 w-[126.8rem] h-[62.5rem] flex gap-4">
+      <section className="z-10 w-[126.8rem] h-[62.5rem] flex gap-4">
         <Menus />
         <ProfileCard />
       </section>

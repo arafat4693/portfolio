@@ -50,7 +50,7 @@ html {
   z-index: -1;
   background: linear-gradient(
     135deg,
-    rgba(249, 193, 89, 0.4) 0%,
+    rgba(133, 87, 2, 0.4) 0%,
     rgba(246, 184, 70, 0.01) 100%
   );
 }
@@ -60,13 +60,32 @@ html {
   height: 100%;
 }
 
-.swiper-fade .swiper-slide-duplicate-active {
-  opacity: 1 !important;
-  transition: 1400ms !important;
+.swiper-fade .swiper-slide-active img {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateY(0);
+  transition: 1400ms ease !important;
 }
 
-.swiper-fade .swiper-slide-duplicate-next,
-.swiper-fade .swiper-slide-duplicate-prev {
-  opacity: 0 !important;
-  transition: 0ms !important;
+.swiper-fade .swiper-slide-next img,
+.swiper-fade .swiper-slide-prev img {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1) translateY(2rem);
+  transition: 1400ms ease !important;
+}
+
+.profilePic::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(246, 184, 70, 0.4) 0%,
+    rgba(246, 184, 70, 0.01) 100%
+  );
 }

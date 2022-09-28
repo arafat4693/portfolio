@@ -5,13 +5,12 @@ import type { Engine, Container } from "tsparticles-engine"
 
 const Background = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine)
     await loadFull(engine)
   }, [])
 
   const particlesLoaded = useCallback(
     async (container: Container | undefined) => {
-      await console.log(container)
+      // await console.log(container)
     },
     []
   )
@@ -71,7 +70,7 @@ const Background = () => {
               default: "bounce",
             },
             random: false,
-            speed: 2,
+            speed: 1,
             straight: false,
           },
           number: {
@@ -79,7 +78,7 @@ const Background = () => {
               enable: true,
               area: 800,
             },
-            value: 80,
+            value: 30,
           },
           opacity: {
             value: 0.5,

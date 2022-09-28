@@ -27,7 +27,7 @@ export default function Slide() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full">
+          <div className="relative w-full h-full">
             <Image
               src="/images/g-9.jpg"
               alt="tour"
@@ -38,7 +38,7 @@ export default function Slide() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full">
+          <div className="relative w-full h-full">
             <Image
               src="/images/p-2.jpg"
               alt="tour"
