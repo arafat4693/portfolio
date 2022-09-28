@@ -1,26 +1,72 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 
-a {
-  color: inherit;
-  text-decoration: none;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
 }
 
 * {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+  /* background-color: #111928; */
+}
+
+.menuBtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.2rem;
+  background: radial-gradient(
+    ellipse at right,
+    rgba(197, 202, 213, 0.15) 0,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+.profile::after {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: -1.2rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    rgba(249, 193, 89, 0.4) 0%,
+    rgba(246, 184, 70, 0.01) 100%
+  );
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-fade .swiper-slide-duplicate-active {
+  opacity: 1 !important;
+  transition: 1400ms !important;
+}
+
+.swiper-fade .swiper-slide-duplicate-next,
+.swiper-fade .swiper-slide-duplicate-prev {
+  opacity: 0 !important;
+  transition: 0ms !important;
 }
