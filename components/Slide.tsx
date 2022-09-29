@@ -6,7 +6,7 @@ import "swiper/css/effect-fade"
 
 export default function Slide() {
   return (
-    <div className="h-[34rem] overflow-hidden rounded-lg relative before:content-[''] before:absolute before:z-10 before:-left-8 before:-right-8 before:-bottom-[6.72rem] w-auto before:h-40 before:bg-gray-900 before:rounded-tl-[100%] before:rounded-tr-[100%]">
+    <div className="h-[32rem] overflow-hidden rounded-lg relative before:content-[''] before:absolute before:z-10 before:-left-8 before:-right-8 before:-bottom-[6.72rem] w-auto before:h-40 before:bg-gray-900 before:rounded-tl-[100%] before:rounded-tr-[100%]">
       <Swiper
         loop={true}
         effect={"fade"}

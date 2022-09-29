@@ -16,7 +16,8 @@
     "react-tsparticles": "^2.3.2",
     "swiper": "^8.4.2",
     "tsparticles": "^2.3.2",
-    "tsparticles-path-polygon": "^2.3.2"
+    "tsparticles-path-polygon": "^2.3.2",
+    "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
     "@types/node": "18.7.23",

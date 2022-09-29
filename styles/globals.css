@@ -25,15 +25,42 @@ html {
   /* background-color: #111928; */
 }
 
-.menuBtn::before {
+.menuBtn::before,
+.cv::before {
   content: "";
   position: absolute;
-  bottom: 0;
   left: 0;
   width: 100%;
   height: 0.2rem;
+}
+
+.menuBtn::before {
+  bottom: 0;
   background: radial-gradient(
     ellipse at right,
+    rgba(197, 202, 213, 0.15) 0,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+.download::before {
+  content: "";
+  position: absolute;
+  width: 0.2rem;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(197, 202, 213, 0.15) 0,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+.cv::before {
+  top: 0;
+  background: radial-gradient(
+    ellipse at left,
     rgba(197, 202, 213, 0.15) 0,
     rgba(255, 255, 255, 0) 70%
   );
