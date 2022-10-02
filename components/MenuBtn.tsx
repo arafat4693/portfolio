@@ -10,8 +10,8 @@ export default function MenuBtn({ label, Icon, noBorder }: Props) {
   return (
     <div
       className={`${
-        noBorder ? "" : "menuBtn"
-      } h-[7.2rem] bg-gray-900 group gap-2 flex flex-col items-center justify-center cursor-pointer relative`}
+        noBorder ? "" : "relative customLine before:bottom-0 borderRight"
+      } h-[7.2rem] bg-gray-900 group gap-2 flex flex-col items-center justify-center cursor-pointer`}
     >
       <Icon className="text-[2rem] text-gray-300 transition-all duration-300 group-hover:text-main-orange" />
       <p className="uppercase text-base font-medium text-gray-300 transition-all duration-300 group-hover:text-main-orange">

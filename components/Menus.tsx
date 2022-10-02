@@ -4,8 +4,8 @@ import { menus } from "../data"
 
 export default function Menus() {
   return (
-    <header className="w-[7.2rem] py-6 h-full flex flex-col justify-between">
-      {/* menu btn */}
+    <header className="w-[7.2rem] py-6 h-full mr-4 flex flex-col justify-between">
+      {/* humburbar menu */}
       <div className="h-[7.2rem] rounded-lg bg-gray-900 flex items-center justify-center">
         <div className="w-11 cursor-pointer group">
           <div className="w-9/12 h-[0.24rem] bg-gray-300 transition-width duration-300 group-hover:w-full group-hover:bg-main-orange"></div>
