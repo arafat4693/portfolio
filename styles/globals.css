@@ -25,6 +25,24 @@ html {
   /* background-color: #111928; */
 }
 
+/* width */
+.about::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+/* Track */
+.about::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  background-color: transparent;
+}
+
+/* Handle */
+.about::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 0.6rem;
+}
+
 .customLine::before {
   content: "";
   position: absolute;
@@ -59,7 +77,7 @@ html {
   );
 }
 
-.download::before {
+.vCustomLine::before {
   content: "";
   position: absolute;
   width: 0.1rem;

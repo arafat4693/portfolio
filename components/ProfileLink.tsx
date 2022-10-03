@@ -10,7 +10,7 @@ export default function ProfileLink({ name, Icon, border }: Props) {
   return (
     <span
       className={`w-1/2 ${
-        border ? "download relative" : ""
+        border ? "vCustomLine relative" : ""
       } h-full flex justify-center items-center gap-4 text-xl text-gray-300 font-semibold uppercase cursor-pointer group`}
     >
       <Link href="/">
