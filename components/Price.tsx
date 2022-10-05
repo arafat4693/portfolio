@@ -1,4 +1,5 @@
 import { FaChevronRight } from "react-icons/fa"
+import MyIcon from "./MyIcon"
 
 interface Props {
   Icon: any
@@ -9,10 +10,8 @@ interface Props {
 export default function Price({ Icon, packageName, price }: Props) {
   return (
     <div className="py-10 px-12 flex flex-col items-center">
-      <div className="icon w-24 h-24 rounded-full border-2 border-main-orange border-solid flex items-center justify-center">
-        <Icon className="text-5xl text-main-orange" />
-      </div>
-      <h3 className="text-[1.6rem] text-gray-300 font-semibold capitalize mt-6">
+      <MyIcon Icon={Icon} />
+      <h3 className="text-[1.6rem] text-gray-300 font-semibold capitalize mt-4 tracking-wider">
         {packageName}
       </h3>
       <div className="amount inline-flex items-center gap-4 my-6">
