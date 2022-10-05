@@ -77,6 +77,14 @@ html {
   );
 }
 
+.lineLeft {
+  background: radial-gradient(
+    ellipse at left,
+    rgba(197, 202, 213, 0.15) 0,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
 .vCustomLine::before {
   content: "";
   position: absolute;
@@ -115,24 +123,32 @@ html {
   );
 }
 
-.profile {
-  box-shadow: 0 0 20px -2px rgb(0 0 0 / 0.3);
+.overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(133, 87, 2, 0.4) 0%,
+    rgba(246, 184, 70, 0.01) 100%
+  );
 }
 
-.swiper {
+.myShadow {
+  box-shadow: 3px 0 20px -2px rgba(0, 0, 0, 0.3);
+}
+
+.bgSlider .swiper {
   width: 100%;
   height: 100%;
 }
 
-.swiper-fade .swiper-slide-active img {
+.bgSlider .swiper-fade .swiper-slide-active img {
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(0);
   transition: 1400ms ease !important;
 }
 
-.swiper-fade .swiper-slide-next img,
-.swiper-fade .swiper-slide-prev img {
+.bgSlider .swiper-fade .swiper-slide-next img,
+.bgSlider .swiper-fade .swiper-slide-prev img {
   opacity: 0;
   visibility: hidden;
   transform: scale(1.1) translateY(2rem);

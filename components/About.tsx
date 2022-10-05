@@ -1,4 +1,5 @@
 import AboutMe from "./AboutMe"
+import BrandLogos from "./BrandLogos"
 import MyServices from "./MyServices"
 import Prices from "./Prices"
 import Title from "./Title"
@@ -12,6 +13,9 @@ export default function About() {
       <MyServices />
       <Title name="pricing" />
       <Prices />
+      <Title name="clients" />
+      <BrandLogos />
+      <Title name="testimonials" />
     </div>
   )
 }
