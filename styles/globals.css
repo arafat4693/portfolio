@@ -135,9 +135,21 @@ html {
   box-shadow: 3px 0 20px -2px rgba(0, 0, 0, 0.3);
 }
 
-.bgSlider .swiper {
+.swiper {
   width: 100%;
   height: 100%;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  background: transparent !important;
+  border: 0.1rem solid #f59e0b;
+  width: 0.9rem;
+  height: 0.9rem;
+  margin: 0 0.3rem !important;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: #f59e0b !important;
 }
 
 .bgSlider .swiper-fade .swiper-slide-active img {
@@ -168,4 +180,34 @@ html {
     rgba(246, 184, 70, 0.4) 0%,
     rgba(246, 184, 70, 0.01) 100%
   );
+}
+
+.quote::before,
+.quote::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(107 114 128);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  opacity: 0.65;
+}
+
+.quote::after {
+  bottom: 0;
+  right: 0;
+  -webkit-mask-image: url("/images/quoteRight.svg");
+  mask-image: url("/images/quoteRight.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.quote::before {
+  top: 0;
+  left: 0;
+  -webkit-mask-image: url("/images/quoteLeft.svg");
+  mask-image: url("/images/quoteLeft.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
