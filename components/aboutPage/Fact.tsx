@@ -1,4 +1,4 @@
-import MyIcon from "./MyIcon"
+import MyIcon from "../MyIcon"
 
 interface Props {
   Icon: any

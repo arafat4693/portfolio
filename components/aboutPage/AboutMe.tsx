@@ -1,4 +1,4 @@
-import MyInfo from "./MyInfo"
+import MyInfo from "../MyInfo"
 
 export default function AboutMe() {
   return (

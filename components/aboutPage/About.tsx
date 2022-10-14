@@ -4,7 +4,7 @@ import Facts from "./Facts"
 import MyServices from "./MyServices"
 import Prices from "./Prices"
 import Testimonials from "./Testimonials"
-import Title from "./Title"
+import Title from "../Title"
 
 export default function About() {
   return (
