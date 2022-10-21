@@ -1,10 +1,16 @@
+import { IconType } from "react-icons"
 interface Props {
-  Icon: any
+  Icon: IconType
+  size?: string
 }
 
-export default function MyIcon({ Icon }: Props) {
+export default function MyIcon({ Icon, size }: Props) {
   return (
-    <div className="icon min-h-[6rem] w-24 h-24 rounded-full border-2 border-main-orange border-solid flex items-center justify-center">
+    <div
+      className={`icon ${
+        size ? size : "w-24 h-24"
+      } rounded-full border-2 border-main-orange border-solid flex items-center justify-center`}
+    >
       <Icon className="text-5xl text-main-orange" />
     </div>
   )

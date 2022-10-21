@@ -1,9 +1,10 @@
+import { IconType } from "react-icons"
 import MyIcon from "../MyIcon"
 
 interface Props {
   name: string
   border?: boolean
-  Icon: any
+  Icon: IconType
 }
 
 export default function MyService({ name, Icon, border }: Props) {

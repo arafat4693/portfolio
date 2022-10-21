@@ -3,9 +3,13 @@ import Fact from "./Fact"
 
 export default function Facts() {
   return (
-    <ul className="logos grid grid-cols-4 mb-20">
+    <ul className="logos grid grid-cols-4 mb-12">
       <li>
-        <Fact Icon={FaReact} desc="100+ Albumes Listened" border />
+        <Fact
+          Icon={FaReact}
+          desc="100+ Albumes Listened jsjsjsjsjjsjs"
+          border
+        />
       </li>
       <li>
         <Fact Icon={FaReact} desc="15+ Awards Won" border />

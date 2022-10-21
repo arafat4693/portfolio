@@ -1,7 +1,9 @@
+import { IconType } from "react-icons"
+
 interface Props {
   name: string
   border?: boolean
-  Icon: any
+  Icon: IconType
 }
 
 export default function MyLink({ name, Icon, border }: Props) {

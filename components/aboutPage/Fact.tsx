@@ -9,7 +9,7 @@ interface Props {
 export default function Fact({ Icon, desc, border }: Props) {
   return (
     <div
-      className={`h-60 w-full flex flex-col items-center py-10 px-12 ${
+      className={`w-full h-fit flex flex-col items-center py-10 px-12 ${
         border && "relative vCustomLine"
       }`}
     >
