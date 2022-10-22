@@ -23,7 +23,7 @@ export default function ResumeItem({
   return (
     <div
       className={`pt-11 ${
-        border ? "customLine before:bottom-0 relative borderLeft pb-11" : ""
+        border ? "customLine before:bottom-0 relative borderLeft pb-11" : "pb-3"
       }`}
     >
       <h2

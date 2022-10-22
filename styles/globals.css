@@ -7,6 +7,10 @@
 @layer base {
 }
 
+:root {
+  --wa: 38 92% 50%;
+}
+
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -22,7 +26,7 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 6.5rem;
-  /* background-color: #111928; */
+  /* background-color: hsl(165, 92%, 50%); */
 }
 
 /* width */
@@ -152,20 +156,27 @@ html {
   background: #f59e0b !important;
 }
 
-.bgSlider .swiper-fade .swiper-slide-active img {
+.bgSlider .swiper-fade .swiper-slide img {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1) translateY(2rem);
+  transition: 1400ms ease !important;
+}
+
+.bgSlider .swiper-fade .swiper-slide.swiper-slide-active img {
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(0);
   transition: 1400ms ease !important;
 }
 
-.bgSlider .swiper-fade .swiper-slide-next img,
-.bgSlider .swiper-fade .swiper-slide-prev img {
+/* .bgSlider .swiper-fade .swiper-slide-next img, */
+/* .bgSlider .swiper-fade .swiper-slide-prev img {
   opacity: 0;
   visibility: hidden;
   transform: scale(1.1) translateY(2rem);
   transition: 1400ms ease !important;
-}
+} */
 
 .profilePic::before {
   content: "";
