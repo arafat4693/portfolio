@@ -5,7 +5,7 @@ import Skills from "./Skills"
 
 export default function Resume() {
   return (
-    <div className="bg-gray-900 w-full max-h-full h-full overflow-y-scroll about">
+    <div className="bg-gray-900 w-full max-h-full h-full overflow-y-scroll myScroll">
       <Title name="resume" />
       <MyResume />
 

@@ -5,6 +5,7 @@ import Background from "../components/Background"
 import Menus from "../components/Menus"
 import ProfileCard from "../components/ProfileCard"
 import Resume from "../components/resumePage/Resume"
+import Works from "../components/worksPage/Works"
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +23,8 @@ const Home: NextPage = () => {
 
         <div className="w-[70.5rem] h-full py-6 relative before:content-[''] before:absolute before:top-6 before:left-0 before:right-[0.7rem] before:h-6 before:bg-gray-900 before:z-30 after:content-[''] after:absolute after:bottom-6 after:left-0 after:right-[0.7rem] after:h-6 after:bg-gray-900 after:z-30">
           {/* <About /> */}
-          <Resume />
+          {/* <Resume /> */}
+          <Works />
         </div>
       </section>
     </main>

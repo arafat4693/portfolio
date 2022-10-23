@@ -30,19 +30,19 @@ html {
 }
 
 /* width */
-.about::-webkit-scrollbar {
+.myScroll::-webkit-scrollbar {
   width: 6px;
   background-color: transparent;
 }
 
 /* Track */
-.about::-webkit-scrollbar-track {
+.myScroll::-webkit-scrollbar-track {
   -webkit-box-shadow: none;
   background-color: transparent;
 }
 
 /* Handle */
-.about::-webkit-scrollbar-thumb {
+.myScroll::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 0.6rem;
 }
