@@ -14,6 +14,7 @@ export default function Title({ name, menus }: Props) {
         <ul className="flex items-center gap-6 mr-12">
           {menus.map((menu, idx) => (
             <li
+              key={idx}
               className={`capitalize text-[1.4rem] cursor-pointer tracking-wide ${
                 idx === 0 ? "text-main-orange" : "text-gray-300"
               }`}

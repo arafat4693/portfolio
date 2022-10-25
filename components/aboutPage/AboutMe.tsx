@@ -3,7 +3,7 @@ import MyInfo from "../MyInfo"
 export default function AboutMe() {
   return (
     <div className="px-12 py-10">
-      <h3 className="leading-[1.8] text-2xl font-normal text-gray-500">
+      <h3 className="leading-[1.8] text-2xl font-normal text-gray-400">
         <p className="font-semibold text-[1.6rem]">
           Hello! I’m Donald Wellborn.
         </p>

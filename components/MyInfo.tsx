@@ -5,10 +5,10 @@ interface Props {
 
 export default function MyInfo({ field, value }: Props) {
   return (
-    <li className="text-gray-400 text-[1.4rem] uppercase">
+    <li className="text-gray-300 text-[1.4rem] uppercase">
       {field}
       <span className="text-4xl mx-2"> . . . .</span>
-      <span className="text-[1.6rem] text-gray-500 normal-case"> {value}</span>
+      <span className="text-2xl text-gray-400 normal-case"> {value}</span>
     </li>
   )
 }

@@ -222,3 +222,33 @@ html {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
+
+.work::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(246, 184, 70, 0.4) 0%,
+    rgba(246, 184, 70, 0.01) 100%
+  );
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.work-wrapper:hover .work::before {
+  opacity: 1;
+}
+
+.tech-func ul li::before {
+  content: "\2022";
+  color: #f59e0b;
+  font-weight: bold;
+  display: inline-block;
+  width: 1.8rem;
+  min-width: 1.8rem;
+}
