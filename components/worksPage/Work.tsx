@@ -1,15 +1,18 @@
 import Image from "next/image"
+import { Dispatch, SetStateAction } from "react"
 import { FaPlus } from "react-icons/fa"
 
 interface Props {
   height: string
   imageUrl: string
   margin?: boolean
+  setIsOpen: Dispatch<SetStateAction<boolean>>
 }
 
-export default function Work({ height, imageUrl, margin }: Props) {
+export default function Work({ height, imageUrl, margin, setIsOpen }: Props) {
   return (
     <div
+      onClick={() => setIsOpen(true)}
       className={`${
         margin ? "mb-12" : "mb-2"
       } cursor-pointer group work-wrapper`}

@@ -1,15 +1,35 @@
 import Image from "next/image"
+import { Dispatch, MouseEvent, SetStateAction } from "react"
 import { AiFillCloseCircle } from "react-icons/ai"
 import { HiOutlineViewGridAdd } from "react-icons/hi"
 import MyInfo from "../MyInfo"
 
-export default function WorkLb() {
+interface Props {
+  isOpen: boolean
+  setIsOpen: Dispatch<SetStateAction<boolean>>
+}
+
+export default function WorkLb({ isOpen, setIsOpen }: Props) {
+  function closeLb(e: MouseEvent): void {
+    if ((e.target as Element).classList.contains("lb")) {
+      setIsOpen(false)
+    }
+  }
+
   return (
-    <section className="fixed top-0 left-0 w-screen h-screen bg-gray-900/70 z-50 flex justify-center">
+    <section
+      onClick={closeLb}
+      className={`lb fixed top-0 left-0 w-screen h-screen bg-gray-900/70 z-50 flex justify-center transition-all duration-200 ${
+        isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+      }`}
+    >
       <main className="h-full w-[70rem] bg-gray-800">
         <div className="w-full max-h-full h-full overflow-y-scroll myScroll">
           <div className="w-full relative h-[45rem]">
-            <AiFillCloseCircle className="absolute top-6 right-8 text-5xl text-white cursor-pointer z-10" />
+            <AiFillCloseCircle
+              onClick={() => setIsOpen(false)}
+              className="absolute top-6 right-8 text-5xl text-white cursor-pointer z-10"
+            />
             <Image
               src="/images/g-9.jpg"
               alt="project description"

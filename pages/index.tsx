@@ -2,6 +2,7 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import About from "../components/aboutPage/About"
 import Background from "../components/Background"
+import Blog from "../components/blogsPage/Blogs"
 import Menus from "../components/Menus"
 import ProfileCard from "../components/ProfileCard"
 import Resume from "../components/resumePage/Resume"
@@ -24,7 +25,8 @@ const Home: NextPage = () => {
         <div className="w-[70.5rem] h-full py-6 relative before:content-[''] before:absolute before:top-6 before:left-0 before:right-[0.7rem] before:h-6 before:bg-gray-900 before:z-30 after:content-[''] after:absolute after:bottom-6 after:left-0 after:right-[0.7rem] after:h-6 after:bg-gray-900 after:z-30">
           {/* <About /> */}
           {/* <Resume /> */}
-          <Works />
+          {/* <Works /> */}
+          <Blog />
         </div>
       </section>
     </main>
