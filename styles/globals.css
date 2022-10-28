@@ -26,7 +26,7 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 6.5rem;
-  /* background-color: #111827; */
+  /* background-color: #f5b038; */
 }
 
 /* width */
@@ -243,4 +243,30 @@ html {
   display: inline-block;
   width: 1.8rem;
   min-width: 1.8rem;
+}
+
+.loader span:first-child {
+  animation: bubble 0.9s linear infinite alternate forwards;
+}
+
+.loader span:last-child {
+  animation: bubbleReverse 0.9s linear infinite alternate forwards;
+}
+
+@keyframes bubble {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes bubbleReverse {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
