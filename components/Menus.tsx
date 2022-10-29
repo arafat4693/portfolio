@@ -1,18 +1,27 @@
+import { useState } from "react"
 import MenuBtn from "./MenuBtn"
 import { BsCartFill } from "react-icons/bs"
 import { menus } from "../data"
+import SideMenuLb from "./SideMenuLb"
 
 export default function Menus() {
+  const [sideMenu, setSideMenu] = useState<boolean>(false)
+
   return (
     <header className="w-[7.2rem] py-6 h-full mr-4 flex flex-col justify-between">
       {/* humburbar menu */}
-      <div className="h-[7.2rem] rounded-lg bg-gray-900 flex items-center justify-center">
+      <div
+        onClick={() => setSideMenu(true)}
+        className="h-[7.2rem] rounded-lg bg-gray-900 flex items-center justify-center"
+      >
         <div className="w-11 cursor-pointer group">
           <div className="w-9/12 h-[0.24rem] bg-gray-300 transition-width duration-300 group-hover:w-full group-hover:bg-main-orange"></div>
           <div className="w-full h-1 bg-gray-300 my-2 group-hover:bg-main-orange"></div>
           <div className="w-9/12 h-[0.24rem] bg-gray-300 transition-width duration-300 group-hover:w-full group-hover:bg-main-orange"></div>
         </div>
       </div>
+
+      <SideMenuLb sideMenu={sideMenu} setSideMenu={setSideMenu} />
 
       {/* cart btn */}
       <div className="h-[7.2rem] rounded-lg bg-gray-900 flex items-center justify-center">
