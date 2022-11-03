@@ -5,12 +5,14 @@ import MyServices from "./MyServices"
 import Prices from "./Prices"
 import Testimonials from "./Testimonials"
 import Title from "../Title"
+import AboutMeSkeleton from "./AboutMeSkeleton"
 
 export default function About() {
   return (
     <div className="bg-gray-900 w-full max-h-full h-full overflow-y-scroll myScroll">
       <Title name="about me" />
-      <AboutMe />
+      {/* <AboutMe /> */}
+      <AboutMeSkeleton />
 
       <Title name="my services" />
       <MyServices />

@@ -7,11 +7,7 @@ interface Props {
 
 export default function BrandLogo({ image, border }: Props) {
   return (
-    <div
-      className={`h-60 w-full flex items-center justify-center px-12 ${
-        border && "relative vCustomLine"
-      }`}
-    >
+    <div className={`py-16 px-12 ${border && "relative vCustomLine"}`}>
       <a
         href="/"
         target="_blank"

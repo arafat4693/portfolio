@@ -12,3 +12,5 @@ export default function MyInfo({ field, value }: Props) {
     </li>
   )
 }
+// Irvr7(3ht%rxNcq(ult$8XDO
+// nrK#-YP2FAt3Jg4
