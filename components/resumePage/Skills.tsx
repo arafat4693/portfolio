@@ -1,6 +1,6 @@
 import { FaReact } from "react-icons/fa"
-import Coding from "./Coding"
-import Development from "./Development"
+import BackEnd from "./BackEnd"
+import FrontEnd from "./FrontEnd"
 import IconTitle from "./IconTitle"
 import Knowledge from "./Knowledge"
 import Languages from "./Languages"
@@ -10,8 +10,8 @@ export default function Skills() {
     <>
       <ul className="grid grid-cols-2">
         <li className="relative vCustomLine py-6 px-12">
-          <IconTitle title="coding" Icon={FaReact} />
-          <Coding />
+          <IconTitle title="back-end" Icon={FaReact} />
+          <BackEnd />
         </li>
         <li className="py-6 px-12">
           <IconTitle title="knowledge" Icon={FaReact} />
@@ -22,7 +22,7 @@ export default function Skills() {
       <ul className="grid grid-cols-2">
         <li className="relative vCustomLine py-6 px-12">
           <IconTitle title="font-end" Icon={FaReact} />
-          <Development />
+          <FrontEnd />
         </li>
         <li className="py-6 px-12">
           <IconTitle title="languages" Icon={FaReact} />

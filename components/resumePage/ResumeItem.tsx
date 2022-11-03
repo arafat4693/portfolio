@@ -55,17 +55,6 @@ export default function ResumeItem({
       <p className="text-gray-500 text-2xl capitalize tracking-wide mt-5 leading-relaxed">
         {desc}
       </p>
-
-      {/* <div
-        className={
-          "flex items-center gap-0.5 text-xl text-gray-300 font-semibold uppercase cursor-pointer group"
-        }
-      >
-        <span className="group-hover:mr-1 group-hover:text-main-orange transition-all duration-300">
-          recommendation
-        </span>
-        <BiChevronRight className="text-[2rem] group-hover:text-main-orange transition-all duration-300" />
-      </div> */}
     </div>
   )
 }
