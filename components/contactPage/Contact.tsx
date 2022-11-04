@@ -1,6 +1,7 @@
 import Title from "../Title"
 import ContactForm from "./ContactForm"
 import Location from "./Location"
+import LocationSkeleton from "./LocationSkeleton"
 
 export default function Contact() {
   return (

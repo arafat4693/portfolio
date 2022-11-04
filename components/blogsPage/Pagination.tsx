@@ -8,7 +8,7 @@ export default function Pagination() {
         <FiChevronLeft className="text-3xl" />
         Prev
       </button>
-      <div className="flex items-center gap-7">
+      <div className="flex items-center gap-7 flex-wrap">
         <span className="text-[1.4rem] text-main-orange transition-all duration-300 cursor-pointer">
           1
         </span>
