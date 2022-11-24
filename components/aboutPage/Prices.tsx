@@ -6,12 +6,12 @@ export default function Prices() {
   return (
     <ul className="prices grid grid-cols-2">
       <li className="relative vCustomLine">
-        {/* <Price Icon={FaReact} packageName="popular" price={22} /> */}
-        <PriceSkeleton />
+        <Price Icon={FaReact} packageName="popular" price={22} />
+        {/* <PriceSkeleton /> */}
       </li>
       <li>
-        {/* <Price Icon={FaReact} packageName="pro" price={45} /> */}
-        <PriceSkeleton />
+        <Price Icon={FaReact} packageName="pro" price={45} />
+        {/* <PriceSkeleton /> */}
       </li>
     </ul>
   )

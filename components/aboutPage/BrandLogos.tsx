@@ -6,20 +6,20 @@ export default function BrandLogos() {
   return (
     <ul className="logos grid grid-cols-4">
       <li>
-        {/* <BrandLogo image="/images/lin.png" border /> */}
-        <ClientSkeleton border />
+        <BrandLogo image="/images/lin.png" border />
+        {/* <ClientSkeleton border /> */}
       </li>
       <li>
-        {/* <BrandLogo image="/images/google.png" border /> */}
-        <ClientSkeleton border />
+        <BrandLogo image="/images/google.png" border />
+        {/* <ClientSkeleton border /> */}
       </li>
       <li>
-        {/* <BrandLogo image="/images/lin.png" border /> */}
-        <ClientSkeleton border />
+        <BrandLogo image="/images/lin.png" border />
+        {/* <ClientSkeleton border /> */}
       </li>
       <li>
-        {/* <BrandLogo image="/images/google.png" /> */}
-        <ClientSkeleton />
+        <BrandLogo image="/images/google.png" />
+        {/* <ClientSkeleton /> */}
       </li>
     </ul>
   )
