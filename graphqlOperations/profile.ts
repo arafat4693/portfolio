@@ -5,28 +5,33 @@ export default {
     getProfile: gql`
       query GetProfile {
         profiles {
-          bio
           cv
           id
           name
-          skills
-          socialMediaAcc {
-            icon
-            id
-            label
-            profileUrl
-          }
-          ownerInfo {
-            field
-            id
-            value
-          }
           ownersPhoto {
             url
           }
           bgImages {
             url
           }
+        }
+      }
+    `,
+
+    getBio: gql`
+      query GetBio {
+        profiles {
+          bio
+        }
+      }
+    `,
+
+    getServices: gql`
+      query GetServices {
+        services {
+          id
+          title
+          serviceDesc
         }
       }
     `,

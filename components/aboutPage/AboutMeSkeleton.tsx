@@ -8,7 +8,7 @@ export default function AboutMeSkeleton() {
         <Skeleton width={400} />
         <Skeleton
           count={2}
-          style={{ "margin-top": "1rem" } as React.CSSProperties}
+          style={{ marginTop: "1rem" } as React.CSSProperties}
         />
         <div className="grid grid-cols-2 mt-6 gap-y-2">
           <Skeleton width={270} />

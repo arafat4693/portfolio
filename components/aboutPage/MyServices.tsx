@@ -1,21 +1,36 @@
 import MyService from "./MyService"
-import { FaReact } from "react-icons/fa"
-import ServiceSkeleton from "./ServiceSkeleton"
+import { services } from "../../data"
+import { ServiceData } from "../../types"
 
 export default function MyServices() {
   return (
     <ul className="services grid grid-cols-2">
       <li className="relative vCustomLine">
-        {/* <ServiceSkeleton border />
-        <ServiceSkeleton /> */}
-        <MyService name="front-end" Icon={FaReact} border />
-        <MyService name="front-end" Icon={FaReact} />
+        {services
+          .slice(0, Math.round(services.length / 2))
+          .map((s: ServiceData, idx) => (
+            <MyService
+              key={s.id}
+              name={s.title}
+              desc={s.description}
+              Icon={s.Icon}
+              border={idx !== Math.round(services.length / 2) - 1}
+            />
+          ))}
       </li>
+
       <li>
-        <MyService name="front-end" Icon={FaReact} border />
-        <MyService name="front-end" Icon={FaReact} />
-        {/* <ServiceSkeleton border />
-        <ServiceSkeleton /> */}
+        {services.slice(Math.round(services.length / 2)).map((s, idx) => (
+          <MyService
+            key={s.id}
+            name={s.title}
+            desc={s.description}
+            Icon={s.Icon}
+            border={
+              Math.round(services.length / 2) + idx !== services.length - 1
+            }
+          />
+        ))}
       </li>
     </ul>
   )

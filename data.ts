@@ -1,6 +1,7 @@
 import { FaRegUser, FaRegListAlt, FaEye, FaRegNewspaper } from "react-icons/fa"
 import { FiSend } from "react-icons/fi"
 import { MdComputer } from "react-icons/md"
+import { SiNextdotjs, SiNodedotjs, SiFigma, SiFirebase } from "react-icons/si"
 import {
   AiFillLinkedin,
   AiOutlineGithub,
@@ -8,6 +9,7 @@ import {
   AiOutlineTwitter,
   AiOutlineWhatsApp,
 } from "react-icons/ai"
+import { ServiceData } from "./types"
 
 export const menus = [
   {
@@ -67,5 +69,36 @@ export const socialMedia = [
     id: 5,
     Icon: AiOutlineWhatsApp,
     label: "Whats app",
+  },
+]
+
+export const services: ServiceData[] = [
+  {
+    id: 1,
+    title: "Front-end",
+    Icon: SiNextdotjs,
+    description:
+      "Modern and mobile-ready website that will help you reach all of your marketing.",
+  },
+  {
+    id: 2,
+    title: "Back-end",
+    Icon: SiNodedotjs,
+    description:
+      "Back-end with a NoSQL DB and API written in a standard express router or tRPC.",
+  },
+  {
+    id: 3,
+    title: "UI/UX design",
+    Icon: SiFigma,
+    description:
+      "Modern user Interface trends with a highly professional and unique design.",
+  },
+  {
+    id: 4,
+    title: "Firebase",
+    Icon: SiFirebase,
+    description:
+      "Fully functional firebase app with authentication, firestore, storage, etc.",
   },
 ]

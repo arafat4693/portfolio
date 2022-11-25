@@ -4,10 +4,11 @@ import MyIcon from "../MyIcon"
 interface Props {
   name: string
   border?: boolean
+  desc: string
   Icon: IconType
 }
 
-export default function MyService({ name, Icon, border }: Props) {
+export default function MyService({ name, Icon, border, desc }: Props) {
   return (
     <div
       className={border ? "customLine before:bottom-0 relative borderLeft" : ""}
@@ -19,8 +20,7 @@ export default function MyService({ name, Icon, border }: Props) {
           {name}
         </h2>
         <p className="text-2xl text-gray-500 leading-[1.8] tracking-wide">
-          Modern and mobile-ready website that will help you reach all of your
-          marketing.
+          {desc}
         </p>
       </div>
     </div>

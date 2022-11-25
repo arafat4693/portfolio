@@ -4,11 +4,14 @@ import "swiper/css"
 import Image from "next/image"
 import "swiper/css/effect-fade"
 
-export default function Slide() {
+interface Props {
+  images: { url: string }[]
+}
+
+export default function Slide({ images }: Props) {
   return (
     <div className="bgSlider h-[32rem] overflow-hidden rounded-lg relative before:content-[''] before:absolute before:z-10 before:-left-8 before:-right-8 before:-bottom-[6.72rem] w-auto before:h-40 before:bg-gray-900 before:rounded-tl-[100%] before:rounded-tr-[100%]">
       <Swiper
-        // loop={true}
         effect={"fade"}
         modules={[Autoplay, EffectFade]}
         autoplay={{
@@ -16,7 +19,20 @@ export default function Slide() {
           disableOnInteraction: false,
         }}
       >
-        <SwiperSlide>
+        {images.map((img, idx) => (
+          <SwiperSlide key={idx}>
+            <div className="w-full h-full relative">
+              <Image
+                src={img.url}
+                alt="tour"
+                layout="fill"
+                objectFit="cover"
+                priority
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+        {/* <SwiperSlide>
           <div className="w-full h-full relative">
             <Image
               src="/images/g-7.jpg"
@@ -48,7 +64,7 @@ export default function Slide() {
               priority
             />
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </div>
   )
