@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors")
+
 module.exports = {
-  important: true,
+  // important: true,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -14,7 +16,21 @@ module.exports = {
       transitionProperty: {
         width: "width",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: "#9ca3af",
+            "h1, h2, h3, h4, h5, h6": {
+              margin: 0,
+              color: "inherit",
+            },
+            strong: {
+              color: "inherit",
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("@tailwindcss/typography")],
 }

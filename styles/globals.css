@@ -234,6 +234,7 @@ html {
 
 .work-wrapper:hover .work::before {
   opacity: 1;
+  /* color: #9ca3af */
 }
 
 .tech-func ul li::before {

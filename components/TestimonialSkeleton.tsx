@@ -8,18 +8,18 @@ export default function TestimonialSkeleton() {
         <Skeleton width={600} />
         <Skeleton
           width={450}
-          style={{ "margin-top": "0.8rem" } as React.CSSProperties}
+          style={{ marginTop: "0.8rem" } as React.CSSProperties}
         />
 
         <Skeleton
           width={100}
           height={100}
           circle={true}
-          style={{ "margin-top": "1.7rem" } as React.CSSProperties}
+          style={{ marginTop: "1.7rem" } as React.CSSProperties}
         />
         <Skeleton
           width={90}
-          style={{ "margin-top": "1rem" } as React.CSSProperties}
+          style={{ marginTop: "1rem" } as React.CSSProperties}
         />
         <Skeleton
           width={70}

@@ -9,7 +9,7 @@ import {
   AiOutlineTwitter,
   AiOutlineWhatsApp,
 } from "react-icons/ai"
-import { ServiceData } from "./types"
+import { ClientData, ServiceData } from "./types"
 
 export const menus = [
   {
@@ -100,5 +100,28 @@ export const services: ServiceData[] = [
     Icon: SiFirebase,
     description:
       "Fully functional firebase app with authentication, firestore, storage, etc.",
+  },
+]
+
+export const clients: ClientData[] = [
+  {
+    id: 1,
+    linkLocation: "https://www.google.com/",
+    imgLocation: "/images/google.png",
+  },
+  {
+    id: 2,
+    linkLocation: "https://www.freelancer.com/",
+    imgLocation: "/images/freelancer.png",
+  },
+  {
+    id: 3,
+    linkLocation: "https://www.upwork.com/",
+    imgLocation: "/images/upwork.png",
+  },
+  {
+    id: 4,
+    linkLocation: "https://www.envato.com/",
+    imgLocation: "/images/envato.png",
   },
 ]

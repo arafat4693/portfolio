@@ -3,7 +3,7 @@ import MyInfo from "../MyInfo"
 import profileOperations from "../../graphqlOperations/profile"
 import AboutMeSkeleton from "./AboutMeSkeleton"
 import ReactMarkdown from "react-markdown"
-import "github-markdown-css"
+// import "github-markdown-css"
 import remarkGfm from "remark-gfm"
 
 interface GetUserBio {
@@ -24,7 +24,7 @@ export default function AboutMe() {
 
   return (
     <div className="px-12 py-10">
-      <article className="markdown-body bg-gray-900 text-gray-400 [&>h4]:m-0 [&>h4]:mb-2.5 [&>h4]:text-[1.6rem] [&>p]:text-2xl [&>p]:leading-[1.65] [&>blockquote]:bg-gray-800 [&>table>thead>tr]:bg-gray-800 [&>table>tbody>tr]:bg-gray-700">
+      <article className="prose max-w-none prose-h2:mb-2.5 prose-h2:text-[1.6rem] prose-p:text-2xl prose-p:leading-[1.65]">
         <ReactMarkdown
           children={data.profiles[0].bio}
           remarkPlugins={[remarkGfm]}
