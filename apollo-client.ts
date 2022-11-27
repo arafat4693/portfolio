@@ -1,5 +1,6 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client"
 import { setContext } from "@apollo/client/link/context"
+import { makeVar } from "@apollo/client"
 
 const httpLink = createHttpLink({
   uri: process.env.NEXT_PUBLIC_HYGRAPH_URL,
@@ -20,5 +21,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 })
+
+export const currentWorkTab = makeVar("All")
 
 export default client

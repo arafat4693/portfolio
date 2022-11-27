@@ -3,7 +3,6 @@ import MyInfo from "../MyInfo"
 import profileOperations from "../../graphqlOperations/profile"
 import AboutMeSkeleton from "./AboutMeSkeleton"
 import ReactMarkdown from "react-markdown"
-// import "github-markdown-css"
 import remarkGfm from "remark-gfm"
 
 interface GetUserBio {

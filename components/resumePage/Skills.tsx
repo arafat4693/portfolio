@@ -1,32 +1,45 @@
+import { useQuery } from "@apollo/client"
 import { FaReact } from "react-icons/fa"
+import { SkillData } from "../../types"
 import BackEnd from "./BackEnd"
 import FrontEnd from "./FrontEnd"
 import IconTitle from "./IconTitle"
 import Knowledge from "./Knowledge"
 import Languages from "./Languages"
+import resumeOperations from "../../graphqlOperations/resume"
+
+interface SkillQuery {
+  skills: SkillData[]
+}
 
 export default function Skills() {
+  const { data, error } = useQuery<SkillQuery>(
+    resumeOperations.Queries.getSkills
+  )
+
+  if (error) console.log(error)
+
   return (
     <>
       <ul className="grid grid-cols-2">
         <li className="relative vCustomLine py-6 px-12">
           <IconTitle title="back-end" Icon={FaReact} />
-          <BackEnd />
+          <BackEnd backend={data?.skills[0].backEnd} />
         </li>
         <li className="py-6 px-12">
           <IconTitle title="knowledge" Icon={FaReact} />
-          <Knowledge />
+          <Knowledge knowledge={data?.skills[0].knowledge} />
         </li>
       </ul>
 
       <ul className="grid grid-cols-2">
         <li className="relative vCustomLine py-6 px-12">
           <IconTitle title="font-end" Icon={FaReact} />
-          <FrontEnd />
+          <FrontEnd frontend={data?.skills[0].frontEnd} />
         </li>
         <li className="py-6 px-12">
           <IconTitle title="languages" Icon={FaReact} />
-          <Languages />
+          <Languages languages={data?.skills[0].languages} />
         </li>
       </ul>
     </>

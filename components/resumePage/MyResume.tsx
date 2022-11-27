@@ -1,70 +1,58 @@
 import IconTitle from "./IconTitle"
 import ResumeItem from "./ResumeItem"
-import { FaReact } from "react-icons/fa"
+import { FaGraduationCap, FaNetworkWired } from "react-icons/fa"
 import ResumeSkeleton from "./ResumeSkeleton"
+import resumeOperations from "../../graphqlOperations/resume"
+import { ExperienceData } from "../../types"
+import { useQuery } from "@apollo/client"
+
+interface ExperienceQuery {
+  resumes: ExperienceData[]
+}
 
 export default function MyResume() {
+  const { data, loading, error } = useQuery<ExperienceQuery>(
+    resumeOperations.Queries.getExperience
+  )
+
+  if (error) console.log(error)
+
   return (
     <ul className="grid grid-cols-2">
       <li className="relative vCustomLine py-6 px-12">
-        <IconTitle title="experience" Icon={FaReact} />
-        <ResumeItem
-          year="2018 - present"
-          subHeader="team leader"
-          imageUrl="/images/lin.png"
-          place="facebook inc."
-          desc="Collaborate with creative and development teams."
-          border
-          present
-        />
-        {/* <ResumeSkeleton border /> */}
+        <IconTitle title="experience" Icon={FaNetworkWired} />
 
-        <ResumeItem
-          year="2016 - 2018"
-          subHeader="team leader"
-          imageUrl="/images/google.png"
-          place="facebook inc."
-          desc="Monitored technical aspects of the front-end delivery for projects."
-          border
-        />
-        {/* <ResumeSkeleton border /> */}
+        {(error || loading || data === undefined) && (
+          <>
+            <ResumeSkeleton border />
+            <ResumeSkeleton border />
+            <ResumeSkeleton />
+          </>
+        )}
 
-        <ResumeItem
-          year="2016 - 2018"
-          subHeader="team leader"
-          imageUrl="/images/lin.png"
-          place="facebook inc."
-          desc="Optimize website and apps performance using latest technology."
-        />
-        {/* <ResumeSkeleton /> */}
+        {data &&
+          data.resumes.map((r) => {
+            if (!r.experience) return null
+            return <ResumeItem key={r.id} resume={r} border />
+          })}
       </li>
+
       <li className="py-6 px-12">
-        <IconTitle title="education" Icon={FaReact} />
-        <ResumeItem
-          year="2016 - 2018"
-          subHeader="team leader"
-          place="facebook inc."
-          desc="Stanford University Private university in Stanford, California"
-          border
-        />
-        {/* <ResumeSkeleton border /> */}
+        <IconTitle title="education" Icon={FaGraduationCap} />
 
-        <ResumeItem
-          year="2016 - 2018"
-          subHeader="team leader"
-          place="facebook inc."
-          desc="Coursework - Git, WordPress, Javascript, iOS, Android."
-          border
-        />
-        {/* <ResumeSkeleton border /> */}
+        {(error || loading || data === undefined) && (
+          <>
+            <ResumeSkeleton border />
+            <ResumeSkeleton border />
+            <ResumeSkeleton />
+          </>
+        )}
 
-        <ResumeItem
-          year="2016 - 2018"
-          subHeader="team leader"
-          place="facebook inc."
-          desc="Converted Photoshop layouts to web pages using HTML, CSS, and JavaScript"
-        />
-        {/* <ResumeSkeleton />*/}
+        {data &&
+          data.resumes.map((r) => {
+            if (r.experience) return null
+            return <ResumeItem key={r.id} resume={r} border />
+          })}
       </li>
     </ul>
   )

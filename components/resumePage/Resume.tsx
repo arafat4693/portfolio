@@ -3,6 +3,7 @@ import TestimonialSkeleton from "../TestimonialSkeleton"
 import Title from "../Title"
 import MyResume from "./MyResume"
 import Skills from "./Skills"
+import { quoteData } from "../../data"
 
 export default function Resume() {
   return (
@@ -14,8 +15,7 @@ export default function Resume() {
       <Skills />
 
       <Title name="quote" />
-      {/* <Testimonial /> */}
-      <TestimonialSkeleton />
+      <Testimonial testimonial={quoteData} />
     </div>
   )
 }

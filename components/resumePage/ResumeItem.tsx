@@ -1,25 +1,13 @@
 import Image from "next/image"
 import { BiChevronRight } from "react-icons/bi"
+import { ExperienceData } from "../../types"
 
 interface Props {
-  year: string
-  subHeader: string
-  imageUrl?: string
-  place: string
-  desc: string
+  resume: ExperienceData
   border?: boolean
-  present?: boolean
 }
 
-export default function ResumeItem({
-  year,
-  subHeader,
-  imageUrl,
-  place,
-  desc,
-  border,
-  present,
-}: Props) {
+export default function ResumeItem({ resume, border }: Props) {
   return (
     <div
       className={`pt-11 ${
@@ -28,20 +16,20 @@ export default function ResumeItem({
     >
       <h2
         className={`${
-          present
+          resume.badge.endsWith("Present")
             ? "text-main-orange border-main-orange"
             : "text-gray-500 border-gray-500"
         } border border-solid text-xl py-0.5 px-3 tracking-wide inline-block`}
       >
-        {year}
+        {resume.badge}
       </h2>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <h3 className="text-2xl capitalize font-medium text-gray-300 tracking-wide mt-5 mb-4">
-          {subHeader}
+          {resume.title}
         </h3>
-        {imageUrl && (
+        {resume.logo && (
           <Image
-            src={imageUrl}
+            src={resume.logo.url}
             alt="linkedin"
             width={100}
             height={27}
@@ -51,9 +39,11 @@ export default function ResumeItem({
         )}
       </div>
 
-      <p className="text-gray-500 text-xl capitalize tracking-wider">{place}</p>
+      <p className="text-gray-500 text-xl capitalize tracking-wider">
+        {resume.subTitle}
+      </p>
       <p className="text-gray-500 text-2xl capitalize tracking-wide mt-5 leading-relaxed">
-        {desc}
+        {resume.desc}
       </p>
     </div>
   )

@@ -1,6 +1,6 @@
 import { IconType } from "react-icons"
 
-export interface ProfileData {
+interface ProfileData {
   id: string
   cv: string
   name: string
@@ -8,14 +8,14 @@ export interface ProfileData {
   bgImages: { url: string }[]
 }
 
-export interface ServiceData {
+interface ServiceData {
   id: number
   title: string
   Icon: IconType
   description: string
 }
 
-export interface PriceData {
+interface PriceData {
   id: string
   packageName: string
   packagePrice: number
@@ -42,4 +42,35 @@ interface TestimonialData {
   userProfession: string
   quote: string
   userImage: { url: string }
+}
+
+interface ExperienceData {
+  id: string
+  badge: string
+  desc: string
+  experience: boolean
+  subTitle: string
+  title: string
+  logo: { url: string }
+}
+
+interface SkillData {
+  id: string
+  knowledge: string[]
+  backEnd: FieldValueData[]
+  frontEnd: FieldValueData[]
+  languages: FieldValueData[]
+}
+
+interface FieldValueData {
+  id: string
+  field: string
+  value: string
+}
+
+interface WorksData {
+  id: string
+  title: string
+  images: { url: string }[]
+  workTabs: { tab: String }[]
 }

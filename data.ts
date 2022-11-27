@@ -9,7 +9,7 @@ import {
   AiOutlineTwitter,
   AiOutlineWhatsApp,
 } from "react-icons/ai"
-import { ClientData, ServiceData } from "./types"
+import { ClientData, ServiceData, TestimonialData } from "./types"
 
 export const menus = [
   {
@@ -125,3 +125,12 @@ export const clients: ClientData[] = [
     imgLocation: "/images/envato.png",
   },
 ]
+
+export const quoteData: TestimonialData = {
+  id: "quote",
+  quote:
+    "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+  userName: "Martin Fowler",
+  userProfession: "Software Developer",
+  userImage: { url: "/images/martin.jpg" },
+}

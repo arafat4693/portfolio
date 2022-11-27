@@ -70,7 +70,7 @@ const Background = () => {
               default: "bounce",
             },
             random: false,
-            speed: 1,
+            speed: 0.6,
             straight: false,
           },
           number: {
@@ -78,7 +78,7 @@ const Background = () => {
               enable: true,
               area: 800,
             },
-            value: 30,
+            value: 8,
           },
           opacity: {
             value: 0.5,
@@ -87,7 +87,7 @@ const Background = () => {
             type: "circle",
           },
           size: {
-            value: { min: 1, max: 5 },
+            value: { min: 1, max: 2 },
           },
         },
         detectRetina: true,
