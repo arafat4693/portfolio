@@ -63,7 +63,7 @@ interface SkillData {
 }
 
 interface FieldValueData {
-  id: string
+  id?: string
   field: string
   value: string
 }
@@ -73,4 +73,27 @@ interface WorksData {
   title: string
   images: { url: string }[]
   workTabs: { tab: String }[]
+}
+
+interface PageInfoData {
+  hasNextPage: boolean
+  endCursor: string
+}
+
+interface WorksConnectionData {
+  edges: { node: WorksData }[]
+  pageInfo: PageInfoData
+}
+
+interface SingleWorkData {
+  id: string
+  description: string
+  title: string
+  workUrl: string
+  clientName: string
+  ownerName: string
+  techStack: string[]
+  userActions: string[]
+  images: { url: string }[]
+  date: Date
 }

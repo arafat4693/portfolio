@@ -22,22 +22,22 @@ export default function Skills() {
   return (
     <>
       <ul className="grid grid-cols-2">
-        <li className="relative vCustomLine py-6 px-12">
+        <li className="py-6 px-12">
           <IconTitle title="back-end" Icon={FaReact} />
           <BackEnd backend={data?.skills[0].backEnd} />
         </li>
-        <li className="py-6 px-12">
+        <li className="py-6 px-12 relative vCustomLine before:left-0">
           <IconTitle title="knowledge" Icon={FaReact} />
           <Knowledge knowledge={data?.skills[0].knowledge} />
         </li>
       </ul>
 
       <ul className="grid grid-cols-2">
-        <li className="relative vCustomLine py-6 px-12">
+        <li className="py-6 px-12">
           <IconTitle title="font-end" Icon={FaReact} />
           <FrontEnd frontend={data?.skills[0].frontEnd} />
         </li>
-        <li className="py-6 px-12">
+        <li className="py-6 px-12 relative vCustomLine before:left-0">
           <IconTitle title="languages" Icon={FaReact} />
           <Languages languages={data?.skills[0].languages} />
         </li>

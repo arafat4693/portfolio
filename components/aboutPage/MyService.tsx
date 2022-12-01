@@ -10,7 +10,7 @@ interface Props {
 
 export default function MyService({ name, Icon, border, desc }: Props) {
   return (
-    <div
+    <li
       className={border ? "customLine before:bottom-0 relative borderLeft" : ""}
     >
       <div className="py-10 px-12">
@@ -23,6 +23,6 @@ export default function MyService({ name, Icon, border, desc }: Props) {
           {desc}
         </p>
       </div>
-    </div>
+    </li>
   )
 }

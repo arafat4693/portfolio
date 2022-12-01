@@ -11,7 +11,7 @@ export default function MyLink({ name, Icon, border, url }: Props) {
   return (
     <span
       className={`w-1/2 ${
-        border ? "vCustomLine relative" : ""
+        border ? "vCustomLine relative before:right-0" : ""
       } h-full flex justify-center items-center gap-4 text-xl text-gray-300 font-semibold uppercase cursor-pointer group`}
     >
       <a

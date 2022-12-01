@@ -30,8 +30,7 @@ const Background = () => {
         interactivity: {
           events: {
             onClick: {
-              enable: true,
-              mode: "push",
+              enable: false,
             },
             onHover: {
               enable: true,
@@ -78,7 +77,7 @@ const Background = () => {
               enable: true,
               area: 800,
             },
-            value: 8,
+            value: 10,
           },
           opacity: {
             value: 0.5,

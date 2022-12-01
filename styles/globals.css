@@ -35,8 +35,14 @@ html {
   background-color: transparent;
 }
 
+.infinite-scroll-component::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
 /* Track */
-.myScroll::-webkit-scrollbar-track {
+.myScroll::-webkit-scrollbar-track,
+.infinite-scroll-component::-webkit-scrollbar-track {
   -webkit-box-shadow: none;
   background-color: transparent;
 }
@@ -92,9 +98,9 @@ html {
 .vCustomLine::before {
   content: "";
   position: absolute;
-  width: 0.1rem;
+  width: 0.11rem;
   height: 100%;
-  right: 0;
+  /* right: 0; */
   top: 0;
   background: radial-gradient(
     ellipse at top,
@@ -234,10 +240,11 @@ html {
 
 .work-wrapper:hover .work::before {
   opacity: 1;
-  /* color: #9ca3af */
+  /* color: #d1d5db; */
 }
 
-.tech-func ul li::before {
+.tech-func ul li::before,
+.prose ul li::before {
   content: "\2022";
   color: #f59e0b;
   font-weight: bold;

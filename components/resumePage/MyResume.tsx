@@ -19,7 +19,7 @@ export default function MyResume() {
 
   return (
     <ul className="grid grid-cols-2">
-      <li className="relative vCustomLine py-6 px-12">
+      <li className="py-6 px-12">
         <IconTitle title="experience" Icon={FaNetworkWired} />
 
         {(error || loading || data === undefined) && (
@@ -37,7 +37,7 @@ export default function MyResume() {
           })}
       </li>
 
-      <li className="py-6 px-12">
+      <li className="py-6 px-12 relative vCustomLine before:left-0">
         <IconTitle title="education" Icon={FaGraduationCap} />
 
         {(error || loading || data === undefined) && (

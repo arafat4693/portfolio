@@ -8,7 +8,7 @@ export default function BackEndSkeleton() {
         <Skeleton circle={true} width={90} height={90} />
         <Skeleton
           width={60}
-          style={{ "margin-top": "1rem" } as React.CSSProperties}
+          style={{ marginTop: "1rem" } as React.CSSProperties}
         />
       </div>
     </SkeletonWrapper>
