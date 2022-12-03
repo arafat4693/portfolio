@@ -38,8 +38,8 @@ const Home: NextPage<Props> = ({ profileData }) => {
           {/* <About /> */}
           {/* <Resume /> */}
           {/* <Works /> */}
-          <Blog />
-          {/* <Contact /> */}
+          {/* <Blog /> */}
+          <Contact />
         </div>
       </section>
     </main>

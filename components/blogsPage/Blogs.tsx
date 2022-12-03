@@ -40,8 +40,6 @@ export default function Blogs() {
     setFilteredBlogs(blogsData)
   }, [blogsData])
 
-  // console.log(blogsData)
-
   return (
     <div className="bg-gray-900 w-full max-h-full h-full overflow-y-scroll myScroll">
       <Title name="blogs" />

@@ -1,4 +1,4 @@
-import { ApolloQueryResult, useQuery } from "@apollo/client"
+import { useQuery } from "@apollo/client"
 import { Dispatch, SetStateAction, MouseEvent } from "react"
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
 import Skeleton from "react-loading-skeleton"
@@ -6,13 +6,6 @@ import blogOperations from "../../graphqlOperations/blog"
 import SkeletonWrapper from "../SkeletonWrapper"
 import { client } from "../../apollo-client"
 import { BlogsQuery } from "../../types"
-
-interface fetchMoreArgs {
-  variables: {
-    skip: number
-    first: number
-  }
-}
 
 interface Props {
   currentPage: number
