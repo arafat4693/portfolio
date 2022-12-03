@@ -1,35 +1,69 @@
-import Skeleton from "react-loading-skeleton"
-import SkeletonWrapper from "../SkeletonWrapper"
+import { useQuery } from "@apollo/client"
 import Title from "../Title"
 import Blog from "./Blog"
 import BlogSkeleton from "./BlogSkeleton"
 import Pagination from "./Pagination"
+import blogOperations from "../../graphqlOperations/blog"
+import { BlogData, BlogsQuery } from "../../types"
+import { useEffect, useState } from "react"
+import { NetworkStatus } from "@apollo/client"
+
+interface BlogsVariables {
+  skip: number
+  first: number
+}
+
+const postsPerPage = 6
 
 export default function Blogs() {
+  const [skip, setSkip] = useState<number>(0)
+  const [filteredBlogs, setFilteredBlogs] = useState<BlogsQuery | undefined>(
+    undefined
+  )
+  const {
+    data: blogsData,
+    error,
+    fetchMore,
+    networkStatus,
+  } = useQuery<BlogsQuery, BlogsVariables>(blogOperations.Queries.getBlogs, {
+    variables: { skip: skip, first: postsPerPage },
+    notifyOnNetworkStatusChange: true,
+  })
+  const [currentPage, setCurrentPage] = useState<number>(1)
+
+  if (error) {
+    console.log(error)
+  }
+
+  useEffect(() => {
+    if (blogsData === undefined) return
+    setFilteredBlogs(blogsData)
+  }, [blogsData])
+
+  // console.log(blogsData)
+
   return (
     <div className="bg-gray-900 w-full max-h-full h-full overflow-y-scroll myScroll">
       <Title name="blogs" />
 
-      <ul className="grid grid-cols-2">
-        <li className="relative vCustomLine pt-10 px-12">
-          <BlogSkeleton />
-          <BlogSkeleton />
-          {/* <Blog imageUrl="/images/g-7.jpg" releasedDate="April 28, 2022" />
-          <Blog imageUrl="/images/g-9.jpg" releasedDate="April 28, 2022" /> */}
-        </li>
-        <li className="pt-10 px-12">
-          <BlogSkeleton />
-          <BlogSkeleton />
-          {/* <Blog imageUrl="/images/p-2.jpg" releasedDate="April 28, 2022" />
-          <Blog imageUrl="/images/g-7.jpg" releasedDate="April 28, 2022" /> */}
-        </li>
+      <ul className="grid grid-cols-2 relative vCustomLine before:left-1/2 before:-translate-x-1/2">
+        {filteredBlogs === undefined ||
+        networkStatus === NetworkStatus.fetchMore
+          ? new Array(postsPerPage)
+              .fill(0)
+              .map((_, idx) => <BlogSkeleton key={idx} />)
+          : filteredBlogs.blogs.map((b, idx) => <Blog key={idx} blog={b} />)}
       </ul>
 
-      <div className="px-12 mb-14">
-        <SkeletonWrapper>
-          <Skeleton height={40} />
-        </SkeletonWrapper>
-        {/* <Pagination /> */}
+      <div className="px-12 my-12">
+        <Pagination
+          postsPerPage={postsPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          setSkip={setSkip}
+          setFilteredBlogs={setFilteredBlogs}
+          onLoadMore={fetchMore}
+        />
       </div>
     </div>
   )

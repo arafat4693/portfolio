@@ -97,3 +97,16 @@ interface SingleWorkData {
   images: { url: string }[]
   date: Date
 }
+
+interface BlogData {
+  id: string
+  blogUrl: string
+  description: string
+  title: string
+  thumbnail: { url: string }
+  date: Date
+}
+
+interface BlogsQuery {
+  blogs: BlogData[]
+}

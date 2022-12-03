@@ -5,13 +5,13 @@ import SkeletonWrapper from "../SkeletonWrapper"
 export default function BlogSkeleton() {
   return (
     <SkeletonWrapper>
-      <div className="mb-12">
+      <li className="pt-10 px-12">
         <Skeleton height={200} />
         <div className="text-center">
           <Skeleton
             width={112}
             height={16}
-            style={{ "margin-top": "1rem" } as React.CSSProperties}
+            style={{ marginTop: "1rem" } as React.CSSProperties}
           />
           <Skeleton
             width={150}
@@ -23,7 +23,7 @@ export default function BlogSkeleton() {
           <Skeleton width="70%" />
           <Skeleton width="40%" />
         </div>
-      </div>
+      </li>
     </SkeletonWrapper>
   )
 }
