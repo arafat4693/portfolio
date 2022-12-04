@@ -1,7 +1,6 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client"
 import { setContext } from "@apollo/client/link/context"
 import { makeVar } from "@apollo/client"
-import { WorksConnectionData, WorksData } from "./types"
 import { relayStylePagination } from "@apollo/client/utilities"
 
 const httpLink = createHttpLink({
@@ -49,5 +48,6 @@ export const client = new ApolloClient({
 })
 
 export const currentWorkTab = makeVar("All")
+export const currentMenu = makeVar(1)
 
 export default client

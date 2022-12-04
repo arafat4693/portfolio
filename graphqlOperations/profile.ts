@@ -18,6 +18,17 @@ export default {
       }
     `,
 
+    getNameImage: gql`
+      query GetProfile {
+        profiles {
+          name
+          ownersPhoto {
+            url
+          }
+        }
+      }
+    `,
+
     getBio: gql`
       query GetBio {
         profiles {

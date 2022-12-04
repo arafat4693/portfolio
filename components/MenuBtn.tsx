@@ -1,21 +1,31 @@
-import { FaRegUser } from "react-icons/fa"
+import { MenuData } from "../types"
+import { ReactiveVar } from "@apollo/client"
 
 interface Props {
-  label: string
-  Icon: any
+  menu: MenuData
   noBorder?: boolean
+  active: number
+  reactiveVar: ReactiveVar<number>
 }
 
-export default function MenuBtn({ label, Icon, noBorder }: Props) {
+export default function MenuBtn({
+  menu,
+  noBorder,
+  active,
+  reactiveVar,
+}: Props) {
   return (
     <div
+      onClick={() => reactiveVar(menu.id)}
       className={`${
         noBorder ? "" : "relative customLine before:bottom-0 borderRight"
-      } h-[7.2rem] bg-gray-900 group gap-2 flex flex-col items-center justify-center cursor-pointer`}
+      } h-[7.2rem] bg-gray-900 group gap-2 flex flex-col items-center justify-center cursor-pointer ${
+        active === menu.id ? "text-main-orange" : "text-gray-300"
+      }`}
     >
-      <Icon className="text-[2rem] text-gray-300 transition-all duration-300 group-hover:text-main-orange" />
-      <p className="uppercase text-base font-medium text-gray-300 transition-all duration-300 group-hover:text-main-orange">
-        {label}
+      <menu.Icon className="text-[2rem] transition-all duration-300 group-hover:text-main-orange" />
+      <p className="uppercase text-base font-medium transition-all duration-300 group-hover:text-main-orange">
+        {menu.label}
       </p>
     </div>
   )

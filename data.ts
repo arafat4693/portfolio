@@ -9,9 +9,9 @@ import {
   AiOutlineTwitter,
   AiOutlineWhatsApp,
 } from "react-icons/ai"
-import { ClientData, ServiceData, TestimonialData } from "./types"
+import { ClientData, MenuData, ServiceData, TestimonialData } from "./types"
 
-export const menus = [
+export const menus: MenuData[] = [
   {
     id: 1,
     label: "about",
@@ -106,8 +106,8 @@ export const services: ServiceData[] = [
 export const clients: ClientData[] = [
   {
     id: 1,
-    linkLocation: "https://www.google.com/",
-    imgLocation: "/images/google.png",
+    linkLocation: "https://www.linkedin.com/",
+    imgLocation: "/images/lin.png",
   },
   {
     id: 2,
