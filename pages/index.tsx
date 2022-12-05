@@ -10,15 +10,25 @@ import ProfileCard from "../components/ProfileCard"
 import Resume from "../components/resumePage/Resume"
 import Works from "../components/worksPage/Works"
 import "react-loading-skeleton/dist/skeleton.css"
-import client from "../apollo-client"
+import client, { currentMenu } from "../apollo-client"
 import profileOperations from "../graphqlOperations/profile"
 import { ProfileData } from "../types"
+import { useReactiveVar } from "@apollo/client"
+import { menus } from "../data"
+import { AnimatePresence, motion } from "framer-motion"
 
 interface Props {
   profileData: ProfileData
 }
 
+const clipPaths = [
+  "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
+  "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+]
+
 const Home: NextPage<Props> = ({ profileData }) => {
+  const menuId = useReactiveVar(currentMenu)
+
   return (
     <main className="min-h-screen relative home flex justify-center items-center">
       <Head>
@@ -34,12 +44,44 @@ const Home: NextPage<Props> = ({ profileData }) => {
         <Menus />
         <ProfileCard profileData={profileData} />
 
-        <div className="w-[70.5rem] h-full py-6 relative before:content-[''] before:absolute before:top-6 before:left-0 before:right-[0.7rem] before:h-6 before:bg-gray-900 before:z-30 after:content-[''] after:absolute after:bottom-6 after:left-0 after:right-[0.7rem] after:h-6 after:bg-gray-900 after:z-30">
-          <About />
-          {/* <Resume />
-          <Works />
-          <Blog />
-          <Contact /> */}
+        <div className="w-[70.5rem] h-full py-6">
+          <div className="relative bg-gray-900 h-full before:content-[''] before:absolute before:top-0 before:left-0 before:right-[0.7rem] before:h-6 before:bg-gray-900 before:z-30 after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-[0.7rem] after:h-6 after:bg-gray-900 after:z-30">
+            <AnimatePresence mode="wait">
+              {menus.map(
+                (m) =>
+                  menuId === m.id && (
+                    <motion.div
+                      key={m.id}
+                      className="bg-gray-900 w-full max-h-full h-full overflow-y-scroll myScroll"
+                      initial="initialState"
+                      animate="animateState"
+                      exit="exitState"
+                      transition={{
+                        duration: 0.75,
+                      }}
+                      variants={{
+                        initialState: {
+                          opacity: 0,
+                          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+                        },
+                        animateState: {
+                          opacity: 1,
+                          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+                        },
+                        exitState: {
+                          clipPath:
+                            clipPaths[
+                              Math.floor(Math.random() * clipPaths.length)
+                            ],
+                        },
+                      }}
+                    >
+                      <m.Component />
+                    </motion.div>
+                  )
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </section>
     </main>

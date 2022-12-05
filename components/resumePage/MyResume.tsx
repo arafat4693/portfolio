@@ -5,15 +5,32 @@ import ResumeSkeleton from "./ResumeSkeleton"
 import resumeOperations from "../../graphqlOperations/resume"
 import { ExperienceData } from "../../types"
 import { useQuery } from "@apollo/client"
+import { useMemo } from "react"
 
 interface ExperienceQuery {
   resumes: ExperienceData[]
 }
 
 export default function MyResume() {
-  const { data, loading, error } = useQuery<ExperienceQuery>(
+  const { data, error } = useQuery<ExperienceQuery>(
     resumeOperations.Queries.getExperience
   )
+
+  const filteredData = useMemo<
+    [ExperienceData[], ExperienceData[]] | undefined
+  >(() => {
+    if (data === undefined) return undefined
+    const experience: ExperienceData[] = []
+    const education: ExperienceData[] = []
+    data.resumes.forEach((r) => {
+      if (r.experience) {
+        experience.push(r)
+      } else {
+        education.push(r)
+      }
+    })
+    return [experience, education]
+  }, [data])
 
   if (error) console.log(error)
 
@@ -22,37 +39,41 @@ export default function MyResume() {
       <li className="py-8 px-12">
         <IconTitle title="experience" Icon={FaNetworkWired} />
 
-        {(error || loading || data === undefined) && (
+        {filteredData === undefined ? (
           <>
             <ResumeSkeleton border />
             <ResumeSkeleton border />
             <ResumeSkeleton />
           </>
+        ) : (
+          filteredData[0].map((r, idx) => (
+            <ResumeItem
+              key={r.id}
+              resume={r}
+              border={idx !== filteredData[0].length - 1}
+            />
+          ))
         )}
-
-        {data &&
-          data.resumes.map((r) => {
-            if (!r.experience) return null
-            return <ResumeItem key={r.id} resume={r} border />
-          })}
       </li>
 
       <li className="py-8 px-12 relative vCustomLine before:left-0">
         <IconTitle title="education" Icon={FaGraduationCap} />
 
-        {(error || loading || data === undefined) && (
+        {filteredData === undefined ? (
           <>
             <ResumeSkeleton border />
             <ResumeSkeleton border />
             <ResumeSkeleton />
           </>
+        ) : (
+          filteredData[1].map((r, idx) => (
+            <ResumeItem
+              key={r.id}
+              resume={r}
+              border={idx !== filteredData[1].length - 1}
+            />
+          ))
         )}
-
-        {data &&
-          data.resumes.map((r) => {
-            if (r.experience) return null
-            return <ResumeItem key={r.id} resume={r} border />
-          })}
       </li>
     </ul>
   )

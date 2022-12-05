@@ -10,37 +10,48 @@ import {
   AiOutlineWhatsApp,
 } from "react-icons/ai"
 import { ClientData, MenuData, ServiceData, TestimonialData } from "./types"
+import About from "./components/aboutPage/About"
+import Resume from "./components/resumePage/Resume"
+import Works from "./components/worksPage/Works"
+import Blogs from "./components/blogsPage/Blogs"
+import Contact from "./components/contactPage/Contact"
 
 export const menus: MenuData[] = [
   {
     id: 1,
     label: "about",
     Icon: FaRegUser,
+    Component: About,
   },
   {
     id: 2,
     label: "resume",
     Icon: FaRegListAlt,
+    Component: Resume,
   },
   {
     id: 3,
     label: "works",
     Icon: FaEye,
+    Component: Works,
   },
   {
     id: 4,
     label: "blog",
     Icon: FaRegNewspaper,
+    Component: Blogs,
   },
   {
     id: 5,
     label: "contact",
     Icon: FiSend,
+    Component: Contact,
   },
   {
     id: 6,
     label: "products",
     Icon: MdComputer,
+    Component: Resume,
   },
 ]
 

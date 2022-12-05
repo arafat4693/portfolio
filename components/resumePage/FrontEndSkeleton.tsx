@@ -7,7 +7,7 @@ export default function FrontEndSkeleton() {
       <div className="mb-7">
         <Skeleton width={70} />
         <Skeleton
-          style={{ "margin-top": "0.625rem" } as React.CSSProperties}
+          style={{ marginTop: "0.625rem" } as React.CSSProperties}
           height={7}
         />
       </div>
