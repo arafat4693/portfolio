@@ -1,4 +1,4 @@
-import { useQuery } from "@apollo/client"
+import { ReactiveVar, useQuery, useReactiveVar } from "@apollo/client"
 import Image from "next/image"
 import {
   Dispatch,
@@ -12,21 +12,23 @@ import { menus, socialMedia } from "../data"
 import SideMenuBtn from "./SideMenuBtn"
 import profileOperations from "../graphqlOperations/profile"
 import { partOfProfile } from "../types"
+import { currentMenu } from "../apollo-client"
 
 interface Props {
   sideMenu: boolean
-  setSideMenu: Dispatch<SetStateAction<boolean>>
+  showMenu: ReactiveVar<boolean>
 }
 
 interface ProfileQuery {
   profiles: partOfProfile[]
 }
 
-export default function SideMenuLb({ sideMenu, setSideMenu }: Props) {
+export default function SideMenuLb({ sideMenu, showMenu }: Props) {
   const { data } = useQuery<ProfileQuery>(
     profileOperations.Queries.getNameImage
   )
   const [profile, setProfile] = useState<partOfProfile | undefined>(undefined)
+  const menuId = useReactiveVar(currentMenu)
 
   useEffect(() => {
     if (data === undefined) return
@@ -35,7 +37,7 @@ export default function SideMenuLb({ sideMenu, setSideMenu }: Props) {
 
   function closeLb(e: MouseEvent): void {
     if ((e.target as Element).classList.contains("lb")) {
-      setSideMenu(false)
+      showMenu(false)
     }
   }
 
@@ -48,7 +50,7 @@ export default function SideMenuLb({ sideMenu, setSideMenu }: Props) {
     >
       <main className="max-h-screen h-screen noScroll overflow-y-scroll w-[32rem] bg-[rgb(27,36,48)] flex flex-col relative">
         <button
-          onClick={() => setSideMenu(false)}
+          onClick={() => showMenu(false)}
           className="transition-all duration-200 hover:text-main-orange absolute left-0 top-0 w-full h-24 bg-[rgb(43,57,74)] text-gray-300 text-5xl flex justify-center items-center"
         >
           <IoMdClose />
@@ -84,9 +86,10 @@ export default function SideMenuLb({ sideMenu, setSideMenu }: Props) {
             {menus.map((m, i) => (
               <SideMenuBtn
                 key={m.id}
-                label={m.label}
-                Icon={m.Icon}
-                active={i === 0}
+                menu={m}
+                active={menuId === m.id}
+                reactiveVar={currentMenu}
+                showMenu={showMenu}
                 last={i === menus.length - 1}
               />
             ))}

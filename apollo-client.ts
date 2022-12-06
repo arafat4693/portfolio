@@ -47,7 +47,9 @@ export const client = new ApolloClient({
   }),
 })
 
-export const currentWorkTab = makeVar("All")
-export const currentMenu = makeVar(1)
+export const currentWorkTab = makeVar<string>("All")
+export const currentMenu = makeVar<number>(1)
+export const currentWork = makeVar<null | string>(null)
+export const showMenu = makeVar<boolean>(false)
 
 export default client

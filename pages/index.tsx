@@ -1,21 +1,20 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import About from "../components/aboutPage/About"
 import Background from "../components/Background"
-import Blog from "../components/blogsPage/Blogs"
-import Contact from "../components/contactPage/Contact"
 import LoaderPage from "../components/LoaderPage"
 import Menus from "../components/Menus"
 import ProfileCard from "../components/ProfileCard"
-import Resume from "../components/resumePage/Resume"
-import Works from "../components/worksPage/Works"
 import "react-loading-skeleton/dist/skeleton.css"
-import client, { currentMenu } from "../apollo-client"
+import client, { currentMenu, currentWork, showMenu } from "../apollo-client"
 import profileOperations from "../graphqlOperations/profile"
 import { ProfileData } from "../types"
 import { useReactiveVar } from "@apollo/client"
 import { menus } from "../data"
 import { AnimatePresence, motion } from "framer-motion"
+import { useEffect, useState } from "react"
+import { Toaster } from "react-hot-toast"
+import WorkLb from "../components/worksPage/WorkLb"
+import SideMenuLb from "../components/SideMenuLb"
 
 interface Props {
   profileData: ProfileData
@@ -28,6 +27,16 @@ const clipPaths = [
 
 const Home: NextPage<Props> = ({ profileData }) => {
   const menuId = useReactiveVar(currentMenu)
+  const workId = useReactiveVar(currentWork)
+  const sideMenu = useReactiveVar(showMenu)
+  const [loaderPage, setLoaderPage] = useState<boolean>(true)
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => setLoaderPage(false), 3500)
+    return () => {
+      clearTimeout(timeoutId)
+    }
+  }, [setLoaderPage])
 
   return (
     <main className="min-h-screen relative home flex justify-center items-center">
@@ -37,20 +46,28 @@ const Home: NextPage<Props> = ({ profileData }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <LoaderPage /> */}
+      {loaderPage && <LoaderPage />}
 
       <Background />
-      <section className="z-10 w-[126.8rem] h-[62.5rem] flex">
-        <Menus />
+
+      <AnimatePresence>
+        {workId && <WorkLb workId={workId} reactiveVar={currentWork} />}
+      </AnimatePresence>
+
+      <SideMenuLb sideMenu={sideMenu} showMenu={showMenu} />
+
+      <section className="z-10 w-full h-full lg:w-[110rem] xl:w-[126.8rem] lg:h-[62.5rem] lg:flex p-24 lg:p-0">
+        <Menus showSideMenu={showMenu} />
         <ProfileCard profileData={profileData} />
 
-        <div className="w-[70.5rem] h-full py-6">
+        <div className="xl:w-[70.5rem] lg:w-[63rem] w-full h-full lg:py-6">
           <div className="relative bg-gray-900 h-full before:content-[''] before:absolute before:top-0 before:left-0 before:right-[0.7rem] before:h-6 before:bg-gray-900 before:z-30 after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-[0.7rem] after:h-6 after:bg-gray-900 after:z-30">
             <AnimatePresence mode="wait">
               {menus.map(
                 (m) =>
                   menuId === m.id && (
                     <motion.div
+                      id="scrollableDiv"
                       key={m.id}
                       className="bg-gray-900 w-full max-h-full h-full overflow-y-scroll myScroll"
                       initial="initialState"
@@ -84,6 +101,7 @@ const Home: NextPage<Props> = ({ profileData }) => {
           </div>
         </div>
       </section>
+      <Toaster />
     </main>
   )
 }

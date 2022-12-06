@@ -1,19 +1,19 @@
 import Image from "next/image"
-import { Dispatch, MouseEvent, SetStateAction } from "react"
+import { MouseEvent } from "react"
 import { AiFillCloseCircle } from "react-icons/ai"
 import { HiOutlineViewGridAdd } from "react-icons/hi"
 import MyInfo from "../MyInfo"
 import { motion } from "framer-motion"
 import { SingleWorkData } from "../../types"
-import { useQuery } from "@apollo/client"
+import { ReactiveVar, useQuery } from "@apollo/client"
 import workOperations from "../../graphqlOperations/work"
 import Loader from "../Loader"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 
 interface Props {
-  isOpen: string
-  setIsOpen: Dispatch<SetStateAction<string | null>>
+  workId: string
+  reactiveVar: ReactiveVar<string | null>
 }
 
 interface SingleWorkQuery {
@@ -24,15 +24,15 @@ interface SingleWorkVariables {
   projectId: string
 }
 
-export default function WorkLb({ isOpen, setIsOpen }: Props) {
+export default function WorkLb({ workId, reactiveVar }: Props) {
   const { data: workData } = useQuery<SingleWorkQuery, SingleWorkVariables>(
     workOperations.Queries.getSingleWork,
-    { variables: { projectId: isOpen } }
+    { variables: { projectId: workId } }
   )
 
   function closeLb(e: MouseEvent): void {
     if ((e.target as Element).classList.contains("lb")) {
-      setIsOpen(null)
+      reactiveVar(null)
     }
   }
 
@@ -52,7 +52,7 @@ export default function WorkLb({ isOpen, setIsOpen }: Props) {
           <div className="w-full max-h-full h-full overflow-y-scroll myScroll">
             <div className="w-full relative h-[45rem]">
               <AiFillCloseCircle
-                onClick={() => setIsOpen(null)}
+                onClick={() => reactiveVar(null)}
                 className="absolute top-6 right-8 text-5xl text-white cursor-pointer z-10"
               />
               <Image

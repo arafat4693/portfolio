@@ -1,23 +1,22 @@
 import Image from "next/image"
-import { Dispatch, SetStateAction } from "react"
 import { FaPlus } from "react-icons/fa"
 import { motion } from "framer-motion"
+import { currentWork } from "../../apollo-client"
 
 interface Props {
   title: string
   imageUrl: string
   projectId: string
-  setIsOpen: Dispatch<SetStateAction<string | null>>
 }
 
-export default function Work({ title, imageUrl, setIsOpen, projectId }: Props) {
+export default function Work({ title, imageUrl, projectId }: Props) {
   return (
     <motion.li
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       layout="position"
-      onClick={() => setIsOpen(projectId)}
+      onClick={() => currentWork(projectId)}
       className={`pb-12 px-12`}
     >
       <div className="group work-wrapper cursor-pointer">

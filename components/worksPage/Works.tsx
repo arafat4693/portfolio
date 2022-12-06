@@ -2,7 +2,6 @@ import { useQuery } from "@apollo/client"
 import { useMemo, useState } from "react"
 import Title from "../Title"
 import Work from "./Work"
-import WorkLb from "./WorkLb"
 import workOperations from "../../graphqlOperations/work"
 import { WorksConnectionData } from "../../types"
 import WorksSkeleton from "./WorksSkeleton"
@@ -47,10 +46,7 @@ export default function Works() {
   if (worksData === undefined) return <WorksSkeleton />
 
   return (
-    <div
-      id="scrollableDiv"
-      className="bg-gray-900 w-full max-h-full h-full overflow-y-scroll myScroll"
-    >
+    <>
       <Title name="works" currentMenu={currentTab} />
 
       <InfiniteScroll
@@ -77,7 +73,6 @@ export default function Works() {
               filteredWorks.map((w) => (
                 <Work
                   key={w.node.id}
-                  setIsOpen={setIsOpen}
                   title={w.node.title}
                   imageUrl={w.node.images[0].url}
                   projectId={w.node.id}
@@ -86,10 +81,6 @@ export default function Works() {
           </AnimatePresence>
         </motion.ul>
       </InfiniteScroll>
-
-      <AnimatePresence>
-        {isOpen && <WorkLb isOpen={isOpen} setIsOpen={setIsOpen} />}
-      </AnimatePresence>
-    </div>
+    </>
   )
 }

@@ -32,39 +32,6 @@ export default function Slide({ images }: Props) {
             </div>
           </SwiperSlide>
         ))}
-        {/* <SwiperSlide>
-          <div className="w-full h-full relative">
-            <Image
-              src="/images/g-7.jpg"
-              alt="tour"
-              layout="fill"
-              objectFit="cover"
-              priority
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="relative w-full h-full">
-            <Image
-              src="/images/g-9.jpg"
-              alt="tour"
-              layout="fill"
-              objectFit="cover"
-            />
-            2
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="relative w-full h-full">
-            <Image
-              src="/images/p-2.jpg"
-              alt="tour"
-              layout="fill"
-              objectFit="cover"
-              priority
-            />
-          </div>
-        </SwiperSlide> */}
       </Swiper>
     </div>
   )

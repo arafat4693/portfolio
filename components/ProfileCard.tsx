@@ -12,7 +12,7 @@ interface Props {
 
 export default function ProfileCard({ profileData }: Props) {
   return (
-    <div className="profile h-full w-[48rem] bg-gray-900 rounded-lg relative">
+    <div className="profile h-full lg:w-[40rem] xl:w-[48rem] bg-gray-900 rounded-lg relative lg:block hidden">
       <div className="relative z-40 w-full h-full myShadow">
         <Slide images={profileData.bgImages} />
 
