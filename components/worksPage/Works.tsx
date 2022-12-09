@@ -36,7 +36,7 @@ export default function Works() {
     return worksData.worksConnection.edges.filter((w) =>
       w.node.workTabs.some((t) => t.tab === currentTab)
     )
-  }, [worksData?.worksConnection.edges, currentTab])
+  }, [worksData, currentTab])
 
   if (worksError) {
     console.log(worksError.toString())
