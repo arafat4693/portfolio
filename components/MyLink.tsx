@@ -10,6 +10,7 @@ interface Props {
 export default function MyLink({ name, Icon, border, url }: Props) {
   return (
     <a
+      rel="noreferrer"
       target="_blank"
       href={url}
       className={`w-1/2 ${

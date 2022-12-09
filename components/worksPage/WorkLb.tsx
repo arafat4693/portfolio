@@ -66,6 +66,7 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
               <h1 className="capitalize text-4xl text-gray-300 font-semibold tracking-wide mb-4 flex gap-6 items-center justify-between">
                 {workData.work.title}
                 <a
+                  rel="noreferrer"
                   href={workData.work.workUrl}
                   target="_blank"
                   className="text-[1.4rem] flex items-center gap-2 rounded-full py-1.5 px-6 tracking-wide font-semibold capitalize hover:bg-sky-600 transition-all duration-300 text-white bg-sky-500"

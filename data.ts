@@ -60,26 +60,31 @@ export const socialMedia = [
     id: 1,
     Icon: AiOutlineInstagram,
     label: "Instagram",
+    mediaUrl: "https://www.instagram.com",
   },
   {
     id: 2,
     Icon: AiOutlineTwitter,
     label: "Twitter",
+    mediaUrl: "https://www.twitter.com",
   },
   {
     id: 3,
     Icon: AiOutlineGithub,
     label: "Github",
+    mediaUrl: "https://www.github.com",
   },
   {
     id: 4,
     Icon: AiFillLinkedin,
     label: "Linkedin",
+    mediaUrl: "https://www.linkedin.com",
   },
   {
     id: 5,
     Icon: AiOutlineWhatsApp,
     label: "Whats app",
+    mediaUrl: "https://www.whatsapp.com",
   },
 ]
 

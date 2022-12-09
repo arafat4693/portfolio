@@ -59,10 +59,16 @@ export default function SideMenuLb({ sideMenu, showMenu, profile }: Props) {
           </div>
 
           <div className="flex gap-x-5 items-center justify-center">
-            {socialMedia.map(({ id, Icon, label }) => (
-              <div className="tooltip tooltip-bottom" data-tip={label} key={id}>
-                <Icon className="text-gray-400 text-2xl transition-all duration-300 hover:text-main-orange cursor-pointer" />
-              </div>
+            {socialMedia.map(({ id, Icon, label, mediaUrl }) => (
+              <a
+                rel="noreferrer"
+                href={mediaUrl}
+                className="tooltip tooltip-bottom"
+                data-tip={label}
+                key={id}
+              >
+                <Icon className="text-gray-400 text-2xl transition-all duration-300 hover:text-main-orange" />
+              </a>
             ))}
           </div>
         </div>
@@ -82,6 +88,7 @@ export default function SideMenuLb({ sideMenu, showMenu, profile }: Props) {
           </div>
 
           <a
+            rel="noreferrer"
             href={profile.cv}
             target="_blank"
             className="text-gray-300 uppercase text-xl border-2 border-solid border-gray-300 w-56 h-14 rounded-full font-semibold flex items-center justify-center mx-auto mt-12 hover:text-main-orange hover:border-main-orange transition-all duration-200"

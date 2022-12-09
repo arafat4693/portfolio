@@ -41,6 +41,7 @@ export default function Price({ Icon, price }: Props) {
         className={`w-full mb-2 flex justify-center items-center gap-4 text-gray-300 font-semibold uppercase cursor-pointer group`}
       >
         <a
+          rel="noreferrer"
           href={price.freelanceUrl}
           target="_blank"
           className="group-hover:mx-2 group-hover:text-main-orange transition-all duration-300 tracking-wide text-[1.3rem]"

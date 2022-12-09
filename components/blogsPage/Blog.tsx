@@ -10,6 +10,7 @@ export default function Blog({ blog }: Props) {
     <li className={`pt-12 px-12`}>
       <div className="cursor-pointer group">
         <a
+          rel="noreferrer"
           href={blog.blogUrl}
           target="_blank"
           className={`relative w-full lg:h-80 h-[35rem] inline-block`}
@@ -28,6 +29,7 @@ export default function Blog({ blog }: Props) {
           {new Date(blog.date).toLocaleDateString()}
         </h2>
         <a
+          rel="noreferrer"
           href={blog.blogUrl}
           target="_blank"
           className="text-gray-300 block text-2xl text-center font-medium mt-5 mb-4 tracking-wide group-hover:text-main-orange transition-all duration-300"

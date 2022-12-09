@@ -18,8 +18,8 @@ export default function BrandLogo({ client, border, pos }: Props) {
     >
       <a
         href={client.linkLocation}
+        rel="noreferrer"
         target="_blank"
-        rel="noopener noreferrer"
         className="inline-block relative w-full h-12"
       >
         <Image
