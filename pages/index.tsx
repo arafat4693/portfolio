@@ -15,6 +15,7 @@ import { useEffect, useState } from "react"
 import { Toaster } from "react-hot-toast"
 import WorkLb from "../components/worksPage/WorkLb"
 import SideMenuLb from "../components/SideMenuLb"
+import { BiMenu } from "react-icons/bi"
 
 interface Props {
   profileData: ProfileData
@@ -54,20 +55,30 @@ const Home: NextPage<Props> = ({ profileData }) => {
         {workId && <WorkLb workId={workId} reactiveVar={currentWork} />}
       </AnimatePresence>
 
-      <SideMenuLb sideMenu={sideMenu} showMenu={showMenu} />
+      <SideMenuLb
+        profile={profileData}
+        sideMenu={sideMenu}
+        showMenu={showMenu}
+      />
 
-      <section className="z-10 w-full h-full lg:w-[110rem] xl:w-[126.8rem] lg:h-[62.5rem] lg:flex p-24 lg:p-0">
+      <button
+        onClick={() => showMenu(true)}
+        className="fixed top-6 right-6 w-14 h-14 rounded-full bg-main-orange text-white flex lg:hidden z-40 items-center justify-center"
+      >
+        <BiMenu className="w-10 h-10" />
+      </button>
+
+      <section className="z-10 w-full h-full lg:w-[115rem] xl:w-[126.8rem] lg:h-[62.5rem] lg:flex p-10 sm:p-24 lg:p-0">
         <Menus showSideMenu={showMenu} />
         <ProfileCard profileData={profileData} />
 
-        <div className="xl:w-[70.5rem] lg:w-[63rem] w-full h-full lg:py-6">
+        <div className="xl:w-[70.5rem] lg:w-[66rem] w-full h-full lg:py-6">
           <div className="relative bg-gray-900 h-full before:content-[''] before:absolute before:top-0 before:left-0 before:right-[0.7rem] before:h-6 before:bg-gray-900 before:z-30 after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-[0.7rem] after:h-6 after:bg-gray-900 after:z-30">
             <AnimatePresence mode="wait">
               {menus.map(
                 (m) =>
                   menuId === m.id && (
                     <motion.div
-                      id="scrollableDiv"
                       key={m.id}
                       className="bg-gray-900 w-full max-h-full h-full overflow-y-scroll myScroll"
                       initial="initialState"

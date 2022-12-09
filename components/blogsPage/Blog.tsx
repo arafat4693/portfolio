@@ -12,7 +12,7 @@ export default function Blog({ blog }: Props) {
         <a
           href={blog.blogUrl}
           target="_blank"
-          className={`relative w-full h-80 inline-block`}
+          className={`relative w-full lg:h-80 h-[35rem] inline-block`}
         >
           <Image
             src={blog.thumbnail.url}

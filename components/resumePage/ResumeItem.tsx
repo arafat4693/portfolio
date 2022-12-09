@@ -34,7 +34,7 @@ export default function ResumeItem({ resume, border }: Props) {
             width={100}
             height={27}
             objectFit="contain"
-            className="opacity-80"
+            className="opacity-80 hidden"
           />
         )}
       </div>

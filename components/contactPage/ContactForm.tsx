@@ -50,7 +50,7 @@ export default function ContactForm() {
 
   return (
     <form className="p-12" onSubmit={handleSubmit(onSubmit)}>
-      <div className="grid grid-cols-2 mb-8 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 mb-8 gap-8">
         <input
           {...register("fullName", { required: true })}
           type="text"

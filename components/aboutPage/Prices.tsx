@@ -17,8 +17,8 @@ export default function Prices() {
   )
 
   return (
-    <ul className="prices grid grid-cols-2">
-      <li className="relative vCustomLine before:right-0">
+    <ul className="prices grid sm:grid-cols-2 grid-cols-1">
+      <li className="relative vCustomLine sm:before:block before:hidden before:right-0">
         <>
           {data && <Price Icon={DiCodeigniter} price={data.prices[0]} />}
           {loading || error || (data === undefined && <PriceSkeleton />)}

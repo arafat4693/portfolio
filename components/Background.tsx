@@ -77,7 +77,7 @@ const Background = () => {
               enable: true,
               area: 800,
             },
-            value: 10,
+            value: 20,
           },
           opacity: {
             value: 0.5,

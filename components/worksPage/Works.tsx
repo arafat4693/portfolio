@@ -46,7 +46,10 @@ export default function Works() {
   if (worksData === undefined) return <WorksSkeleton />
 
   return (
-    <>
+    <div
+      id="scrollableDiv"
+      className="lg:h-full h-[95rem] overflow-y-scroll myScroll"
+    >
       <Title name="works" currentMenu={currentTab} />
 
       <InfiniteScroll
@@ -66,7 +69,7 @@ export default function Works() {
       >
         <motion.ul
           layout="position"
-          className="grid grid-cols-2 relative vCustomLine before:left-1/2 before:-translate-x-1/2 pt-12"
+          className="grid grid-cols-1 sm:grid-cols-2 relative vCustomLine before:hidden sm:before:block before:left-1/2 before:-translate-x-1/2 pt-12"
         >
           <AnimatePresence>
             {filteredWorks &&
@@ -81,6 +84,6 @@ export default function Works() {
           </AnimatePresence>
         </motion.ul>
       </InfiniteScroll>
-    </>
+    </div>
   )
 }

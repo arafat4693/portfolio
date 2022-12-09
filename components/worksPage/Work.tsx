@@ -20,7 +20,7 @@ export default function Work({ title, imageUrl, projectId }: Props) {
       className={`pb-12 px-12`}
     >
       <div className="group work-wrapper cursor-pointer">
-        <div className={`relative w-full h-72 work`}>
+        <div className={`relative w-full h-[35rem] lg:h-72 work`}>
           <FaPlus className="text-main-orange text-5xl z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100" />
           <Image
             src={imageUrl}

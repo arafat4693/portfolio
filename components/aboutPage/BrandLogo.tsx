@@ -3,14 +3,17 @@ import { ClientData } from "../../types"
 
 interface Props {
   client: ClientData
-  border?: boolean
+  border: boolean
+  pos: number
 }
 
-export default function BrandLogo({ client, border }: Props) {
+export default function BrandLogo({ client, border, pos }: Props) {
   return (
     <div
-      className={`py-16 px-12 ${
-        border && "relative vCustomLine before:right-0"
+      className={`py-16 px-12 relative vCustomLine before:right-0 ${
+        border
+          ? `${pos === 1 ? "before:hidden" : "before:block"}`
+          : "before:hidden"
       }`}
     >
       <a

@@ -99,9 +99,8 @@ html {
 .vCustomLine::before {
   content: "";
   position: absolute;
-  width: 0.11rem;
+  width: 0.2rem;
   height: 100%;
-  /* right: 0; */
   top: 0;
   background: radial-gradient(
     ellipse at top,

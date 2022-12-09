@@ -1,5 +1,5 @@
+import { AiFillLinkedin } from "react-icons/ai"
 import { BsFillCloudArrowDownFill } from "react-icons/bs"
-import { IoIosSend } from "react-icons/io"
 import { ProfileData } from "../types"
 import MediaIcons from "./MediaIcons"
 import MyLink from "./MyLink"
@@ -12,7 +12,7 @@ interface Props {
 
 export default function ProfileCard({ profileData }: Props) {
   return (
-    <div className="profile h-full lg:w-[40rem] xl:w-[48rem] bg-gray-900 rounded-lg relative lg:block hidden">
+    <div className="profile h-full lg:w-[42rem] xl:w-[48rem] bg-gray-900 rounded-lg relative lg:block hidden">
       <div className="relative z-40 w-full h-full myShadow">
         <Slide images={profileData.bgImages} />
 
@@ -38,7 +38,11 @@ export default function ProfileCard({ profileData }: Props) {
             url={profileData.cv}
             border
           />
-          <MyLink name="contact me" Icon={IoIosSend} url="#contactMe" />
+          <MyLink
+            name="my linkedin"
+            Icon={AiFillLinkedin}
+            url="https://www.linkedin.com"
+          />
         </div>
       </div>
     </div>

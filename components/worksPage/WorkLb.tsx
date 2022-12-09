@@ -45,7 +45,7 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
       onClick={closeLb}
       className={`lb fixed top-0 left-0 w-screen h-screen bg-gray-900/70 z-50 flex justify-center transition-all duration-200`}
     >
-      <main className="h-full w-[70rem] bg-gray-800 flex justify-center items-center">
+      <main className="h-full w-[70rem] max-w-[90%] bg-gray-800 flex justify-center items-center">
         {workData === undefined ? (
           <Loader />
         ) : (
@@ -53,7 +53,7 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
             <div className="w-full relative h-[45rem]">
               <AiFillCloseCircle
                 onClick={() => reactiveVar(null)}
-                className="absolute top-6 right-8 text-5xl text-white cursor-pointer z-10"
+                className="absolute top-6 right-8 text-5xl text-main-orange cursor-pointer z-10"
               />
               <Image
                 src={workData.work.images[0].url}
@@ -63,7 +63,7 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
               />
             </div>
             <section className="py-14 px-14">
-              <h1 className="capitalize text-4xl text-gray-300 font-semibold tracking-wide mb-4 flex items-center justify-between">
+              <h1 className="capitalize text-4xl text-gray-300 font-semibold tracking-wide mb-4 flex gap-6 items-center justify-between">
                 {workData.work.title}
                 <a
                   href={workData.work.workUrl}
@@ -78,7 +78,7 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
                 project
               </p>
 
-              <ul className="grid grid-cols-2 mt-10 gap-y-2">
+              <ul className="grid sm:grid-cols-2 grid-cols-1 mt-10 gap-y-2">
                 <MyInfo field="created by" value={workData.work.ownerName} />
                 <MyInfo
                   field="date"
@@ -97,8 +97,8 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
 
               {workData.work.techStack.length &&
                 workData.work.userActions.length && (
-                  <div className="grid grid-cols-3 mb-10 gap-2 text-gray-300 text-[1.4rem] tech-func">
-                    <div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 mb-10 gap-2 text-gray-300 text-[1.4rem] tech-func">
+                    <div className="sm:mb-0 mb-6">
                       <h1 className="text-gray-200 font-semibold text-2xl capitalize mb-4">
                         tech-stack
                       </h1>

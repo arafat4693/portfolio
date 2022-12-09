@@ -3,15 +3,20 @@ import MyIcon from "../MyIcon"
 
 interface Props {
   name: string
-  border?: boolean
+  border: boolean
   desc: string
   Icon: IconType
+  last: boolean
 }
 
-export default function MyService({ name, Icon, border, desc }: Props) {
+export default function MyService({ name, Icon, border, desc, last }: Props) {
   return (
     <li
-      className={border ? "customLine before:bottom-0 relative borderLeft" : ""}
+      className={`customLine before:bottom-0 relative borderLeft ${
+        border
+          ? "before:block"
+          : `sm:before:hidden ${last ? "before:hidden" : "before:block"}`
+      }`}
     >
       <div className="py-10 px-12">
         <MyIcon Icon={Icon} />

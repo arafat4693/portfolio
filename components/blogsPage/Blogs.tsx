@@ -44,7 +44,7 @@ export default function Blogs() {
     <>
       <Title name="blogs" />
 
-      <ul className="grid grid-cols-2 relative vCustomLine before:left-1/2 before:-translate-x-1/2">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 relative sm:before:block before:hidden vCustomLine before:left-1/2 before:-translate-x-1/2">
         {filteredBlogs === undefined ||
         networkStatus === NetworkStatus.fetchMore
           ? new Array(postsPerPage)
