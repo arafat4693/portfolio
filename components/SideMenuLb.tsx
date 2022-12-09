@@ -97,7 +97,7 @@ export default function SideMenuLb({ sideMenu, showMenu, profile }: Props) {
           </a>
 
           <p className="text-center text-gray-500 text-xl mt-16 mb-10">
-            sunny's portfolio © 2022.
+            {"sunny's"} portfolio © 2022.
           </p>
         </div>
       </main>

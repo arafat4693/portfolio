@@ -90,10 +90,9 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
               </ul>
 
               <article className="prose max-w-none my-10">
-                <ReactMarkdown
-                  children={workData.work.description}
-                  remarkPlugins={[remarkGfm]}
-                />
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {workData.work.description}
+                </ReactMarkdown>
               </article>
 
               {workData.work.techStack.length &&
