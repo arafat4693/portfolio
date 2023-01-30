@@ -41,10 +41,10 @@ export default function Blogs() {
   }, [blogsData])
 
   return (
-    <>
+    <section className="h-full overflow-y-scroll myScroll">
       <Title name="blogs" />
 
-      <ul className="grid grid-cols-1 sm:grid-cols-2 relative sm:before:block before:hidden vCustomLine before:left-1/2 before:-translate-x-1/2">
+      <ul className="relative grid grid-cols-1 sm:grid-cols-2 sm:before:block before:hidden vCustomLine before:left-1/2 before:-translate-x-1/2">
         {filteredBlogs === undefined ||
         networkStatus === NetworkStatus.fetchMore
           ? new Array(postsPerPage)
@@ -63,6 +63,6 @@ export default function Blogs() {
           onLoadMore={fetchMore}
         />
       </div>
-    </>
+    </section>
   )
 }

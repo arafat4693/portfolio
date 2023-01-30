@@ -15,6 +15,7 @@ import Resume from "./components/resumePage/Resume"
 import Works from "./components/worksPage/Works"
 import Blogs from "./components/blogsPage/Blogs"
 import Contact from "./components/contactPage/Contact"
+import GuestBook from "./components/guestbookPage/GuestBook"
 
 export const menus: MenuData[] = [
   {
@@ -52,6 +53,12 @@ export const menus: MenuData[] = [
     label: "products",
     Icon: MdComputer,
     Component: Resume,
+  },
+  {
+    id: 7,
+    label: "guest book",
+    Icon: MdComputer,
+    Component: GuestBook,
   },
 ]
 

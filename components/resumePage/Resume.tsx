@@ -6,7 +6,7 @@ import { quoteData } from "../../data"
 
 export default function Resume() {
   return (
-    <>
+    <section className="h-full overflow-y-scroll myScroll">
       <Title name="resume" />
       <MyResume />
 
@@ -15,6 +15,6 @@ export default function Resume() {
 
       <Title name="quote" />
       <Testimonial testimonial={quoteData} />
-    </>
+    </section>
   )
 }

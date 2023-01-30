@@ -122,3 +122,15 @@ interface MenuData {
   Icon: IconType
   Component: () => JSX.Element
 }
+
+interface guestBooksConnection {
+  edges: {
+    node: {
+      id: string
+      name: string
+      comment: string
+      createdAt: string
+    }
+  }[]
+  pageInfo: PageInfoData
+}

@@ -8,7 +8,7 @@ import Title from "../Title"
 
 export default function About() {
   return (
-    <>
+    <section className="h-full overflow-y-scroll myScroll">
       <Title name="about me" />
       <AboutMe />
 
@@ -26,6 +26,6 @@ export default function About() {
 
       <Title name="fun facts" />
       <Facts />
-    </>
+    </section>
   )
 }
