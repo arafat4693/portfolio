@@ -8,6 +8,7 @@ export default {
           first: $first
           after: $after
           orderBy: createdAt_DESC
+          stage: DRAFT
         ) {
           edges {
             node {

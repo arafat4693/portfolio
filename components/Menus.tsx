@@ -1,6 +1,6 @@
 import { useState } from "react"
 import MenuBtn from "./MenuBtn"
-import { BsCartFill } from "react-icons/bs"
+import { BsBookHalf } from "react-icons/bs"
 import { menus } from "../data"
 import SideMenuLb from "./SideMenuLb"
 import { ReactiveVar, useReactiveVar } from "@apollo/client"
@@ -30,13 +30,13 @@ export default function Menus({ showSideMenu }: Props) {
       {/* guest book btn */}
       <div
         onClick={() => currentMenu(7)}
-        className="h-[7.2rem] rounded-lg bg-gray-900 flex items-center justify-center cursor-pointer"
+        className="h-[7.2rem] rounded-lg bg-gray-900 flex items-center justify-center cursor-pointer group"
       >
         <div className="relative">
-          <BsCartFill className="text-4xl text-gray-300" />
-          <span className="absolute flex items-center justify-center w-6 h-6 text-lg text-gray-800 rounded-full -top-2 -right-3 bg-main-orange">
+          <BsBookHalf className="text-4xl text-gray-300 transition-all duration-300 group-hover:text-main-orange" />
+          {/* <span className="absolute flex items-center justify-center w-6 h-6 text-lg text-gray-800 rounded-full -top-2 -right-3 bg-main-orange">
             0
-          </span>
+          </span> */}
         </div>
       </div>
 

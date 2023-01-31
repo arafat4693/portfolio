@@ -25,6 +25,7 @@ export const client = new ApolloClient({
       Query: {
         fields: {
           worksConnection: relayStylePagination(),
+          guestBooksConnection: relayStylePagination(),
           blogs: {
             //first merge func gets called and then read func. fetchMore always sends a network request which then comes back to the cache and gets merged
             //with the help of merge function. Then cache tries to read the query to send the required data back to the client. But if a read

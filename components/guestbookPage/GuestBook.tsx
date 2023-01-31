@@ -7,7 +7,10 @@ const loading = false
 
 export default function GuestBook() {
   return (
-    <section className="h-full overflow-y-scroll myScroll">
+    <section
+      className="lg:h-full h-[95rem] overflow-y-scroll myScroll"
+      id="guestComments"
+    >
       <Title name="guest book" />
       <section className="px-12 py-8">
         <GuestForm />
