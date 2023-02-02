@@ -9,13 +9,20 @@ import {
   AiOutlineTwitter,
   AiOutlineWhatsApp,
 } from "react-icons/ai"
-import { ClientData, MenuData, ServiceData, TestimonialData } from "./types"
+import {
+  ClientData,
+  MenuData,
+  ServiceData,
+  StatisticsData,
+  TestimonialData,
+} from "./types"
 import About from "./components/aboutPage/About"
 import Resume from "./components/resumePage/Resume"
 import Works from "./components/worksPage/Works"
 import Blogs from "./components/blogsPage/Blogs"
 import Contact from "./components/contactPage/Contact"
 import GuestBook from "./components/guestbookPage/GuestBook"
+import Stats from "./components/statistics/Stats"
 
 export const menus: MenuData[] = [
   {
@@ -52,7 +59,7 @@ export const menus: MenuData[] = [
     id: 6,
     label: "products",
     Icon: MdComputer,
-    Component: Resume,
+    Component: Stats,
   },
   {
     id: 7,
@@ -157,3 +164,10 @@ export const quoteData: TestimonialData = {
   userProfession: "Software Developer",
   userImage: { url: "/images/martin.jpg" },
 }
+
+export const statisticsData: StatisticsData[] = [
+  {
+    title: "articles",
+    info: "10",
+  },
+]

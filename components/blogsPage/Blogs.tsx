@@ -13,7 +13,7 @@ interface BlogsVariables {
   first: number
 }
 
-const postsPerPage = 6
+const postsPerPage = 10
 
 export default function Blogs() {
   const [skip, setSkip] = useState<number>(0)
