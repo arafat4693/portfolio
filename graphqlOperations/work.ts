@@ -46,6 +46,7 @@ export default {
           title
           userActions
           workUrl
+          githubUrl
           ownerName
           clientName
         }

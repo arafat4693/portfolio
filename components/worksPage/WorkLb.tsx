@@ -10,6 +10,7 @@ import workOperations from "../../graphqlOperations/work"
 import Loader from "../Loader"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import { BsGithub } from "react-icons/bs"
 
 interface Props {
   workId: string
@@ -49,11 +50,11 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
         {workData === undefined ? (
           <Loader />
         ) : (
-          <div className="w-full max-h-full h-full overflow-y-scroll myScroll">
+          <div className="w-full h-full max-h-full overflow-y-scroll myScroll">
             <div className="w-full relative h-[45rem]">
               <AiFillCloseCircle
                 onClick={() => reactiveVar(null)}
-                className="absolute top-6 right-8 text-5xl text-main-orange cursor-pointer z-10"
+                className="absolute z-10 text-5xl cursor-pointer top-6 right-8 text-main-orange"
               />
               <Image
                 src={workData.work.images[0].url}
@@ -63,23 +64,36 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
               />
             </div>
             <section className="py-14 px-14">
-              <h1 className="capitalize text-4xl text-gray-300 font-semibold tracking-wide mb-4 flex gap-6 items-center justify-between">
+              <div className="flex flex-wrap items-center justify-between gap-6 mb-4 text-4xl font-semibold tracking-wide text-gray-300 capitalize">
                 {workData.work.title}
-                <a
-                  rel="noreferrer"
-                  href={workData.work.workUrl}
-                  target="_blank"
-                  className="text-[1.4rem] flex items-center gap-2 rounded-full py-1.5 px-6 tracking-wide font-semibold capitalize hover:bg-sky-600 transition-all duration-300 text-white bg-sky-500"
-                >
-                  view
-                  <HiOutlineViewGridAdd className="text-3xl" />
-                </a>
-              </h1>
-              <p className="text-gray-400 text-xl tracking-wide capitalize">
+
+                <div className="flex items-center gap-x-4">
+                  <a
+                    rel="noreferrer"
+                    href={workData.work.workUrl}
+                    target="_blank"
+                    className="text-[1.4rem] flex items-center gap-2 rounded-full py-1.5 px-6 tracking-wide font-semibold capitalize hover:bg-sky-600 transition-all duration-300 text-white bg-sky-500"
+                  >
+                    view
+                    <HiOutlineViewGridAdd className="text-3xl" />
+                  </a>
+
+                  <a
+                    rel="noreferrer"
+                    href={workData.work.githubUrl}
+                    target="_blank"
+                    className="text-[1.4rem] flex items-center gap-2 rounded-full py-1.5 px-6 tracking-wide font-semibold capitalize shadow-lg hover:bg-gray-700 transition-all duration-300 text-white bg-gray-900"
+                  >
+                    github
+                    <BsGithub className="text-3xl" />
+                  </a>
+                </div>
+              </div>
+              <p className="text-xl tracking-wide text-gray-400 capitalize">
                 project
               </p>
 
-              <ul className="grid sm:grid-cols-2 grid-cols-1 mt-10 gap-y-2">
+              <ul className="grid grid-cols-1 mt-10 sm:grid-cols-2 gap-y-2">
                 <MyInfo field="created by" value={workData.work.ownerName} />
                 <MyInfo
                   field="date"
@@ -89,7 +103,7 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
                 <MyInfo field="categories" value="Project" />
               </ul>
 
-              <article className="prose max-w-none my-10">
+              <article className="my-10 prose max-w-none">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
                   {workData.work.description}
                 </ReactMarkdown>
@@ -98,8 +112,8 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
               {workData.work.techStack.length &&
                 workData.work.userActions.length && (
                   <div className="grid grid-cols-1 sm:grid-cols-3 mb-10 gap-2 text-gray-300 text-[1.4rem] tech-func">
-                    <div className="sm:mb-0 mb-6">
-                      <h1 className="text-gray-200 font-semibold text-2xl capitalize mb-4">
+                    <div className="mb-6 sm:mb-0">
+                      <h1 className="mb-4 text-2xl font-semibold text-gray-200 capitalize">
                         tech-stack
                       </h1>
                       <ul className="flex flex-col gap-y-2">
@@ -112,7 +126,7 @@ export default function WorkLb({ workId, reactiveVar }: Props) {
                     </div>
 
                     <div className="col-span-2">
-                      <h1 className="text-gray-200 font-semibold text-2xl capitalize mb-4">
+                      <h1 className="mb-4 text-2xl font-semibold text-gray-200 capitalize">
                         user-actions
                       </h1>
                       <ul className="flex flex-col gap-y-2">

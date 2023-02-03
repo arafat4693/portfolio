@@ -95,6 +95,7 @@ interface SingleWorkData {
   description: string
   title: string
   workUrl: string
+  githubUrl: string
   clientName: string
   ownerName: string
   techStack: string[]
@@ -137,5 +138,15 @@ interface guestBooksConnection {
 
 interface StatisticsData {
   title: string
+  info: string | number
+  externalLink?: string
+}
+
+interface SocialMedia {
+  id: number
+  label: string
+  mediaUrl: string
+  logoColor: string
   info: string
+  Icon: IconType
 }

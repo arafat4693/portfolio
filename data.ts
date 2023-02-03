@@ -1,28 +1,37 @@
-import { FaRegUser, FaRegListAlt, FaEye, FaRegNewspaper } from "react-icons/fa"
-import { FiSend } from "react-icons/fi"
-import { MdComputer } from "react-icons/md"
-import { SiNextdotjs, SiNodedotjs, SiFigma, SiFirebase } from "react-icons/si"
+import { AiFillLinkedin, AiOutlineGithub } from "react-icons/ai"
 import {
-  AiFillLinkedin,
-  AiOutlineGithub,
-  AiOutlineInstagram,
-  AiOutlineTwitter,
-  AiOutlineWhatsApp,
-} from "react-icons/ai"
+  FaDev,
+  FaDiscord,
+  FaEye,
+  FaFacebookF,
+  FaRegListAlt,
+  FaRegNewspaper,
+  FaRegUser,
+} from "react-icons/fa"
+import { FiSend } from "react-icons/fi"
+import { MdComputer, MdDashboard } from "react-icons/md"
+import {
+  SiFigma,
+  SiFirebase,
+  SiFiverr,
+  SiNextdotjs,
+  SiNodedotjs,
+} from "react-icons/si"
+import About from "./components/aboutPage/About"
+import Blogs from "./components/blogsPage/Blogs"
+import Contact from "./components/contactPage/Contact"
+import GuestBook from "./components/guestbookPage/GuestBook"
+import Resume from "./components/resumePage/Resume"
+import Stats from "./components/statistics/Stats"
+import Works from "./components/worksPage/Works"
 import {
   ClientData,
   MenuData,
   ServiceData,
+  SocialMedia,
   StatisticsData,
   TestimonialData,
 } from "./types"
-import About from "./components/aboutPage/About"
-import Resume from "./components/resumePage/Resume"
-import Works from "./components/worksPage/Works"
-import Blogs from "./components/blogsPage/Blogs"
-import Contact from "./components/contactPage/Contact"
-import GuestBook from "./components/guestbookPage/GuestBook"
-import Stats from "./components/statistics/Stats"
 
 export const menus: MenuData[] = [
   {
@@ -51,15 +60,15 @@ export const menus: MenuData[] = [
   },
   {
     id: 5,
-    label: "contact",
-    Icon: FiSend,
-    Component: Contact,
+    label: "stats",
+    Icon: MdDashboard,
+    Component: Stats,
   },
   {
     id: 6,
-    label: "products",
-    Icon: MdComputer,
-    Component: Stats,
+    label: "contact",
+    Icon: FiSend,
+    Component: Contact,
   },
   {
     id: 7,
@@ -69,36 +78,54 @@ export const menus: MenuData[] = [
   },
 ]
 
-export const socialMedia = [
+export const socialMedia: SocialMedia[] = [
   {
     id: 1,
-    Icon: AiOutlineInstagram,
-    label: "Instagram",
-    mediaUrl: "https://www.instagram.com",
+    Icon: FaDev,
+    label: "Dev",
+    logoColor: "black",
+    mediaUrl: "https://www.dev.to/arafat4693",
+    info: "Follow me and read my articles on Dev.to",
   },
   {
     id: 2,
-    Icon: AiOutlineTwitter,
-    label: "Twitter",
-    mediaUrl: "https://www.twitter.com",
+    Icon: FaFacebookF,
+    label: "Facebook",
+    logoColor: "#3b5998",
+    mediaUrl: "https://www.facebook.com/md.sunny.58910049",
+    info: "Follow me on Facebook",
   },
   {
     id: 3,
     Icon: AiOutlineGithub,
     label: "Github",
-    mediaUrl: "https://www.github.com",
+    logoColor: "#171515",
+    mediaUrl: "https://www.github.com/arafat4693",
+    info: "Star my projects on Github",
   },
   {
     id: 4,
     Icon: AiFillLinkedin,
     label: "Linkedin",
+    logoColor: "#0072b1",
     mediaUrl: "https://www.linkedin.com",
+    info: "Let's connect on Linkedin",
   },
   {
     id: 5,
-    Icon: AiOutlineWhatsApp,
-    label: "Whats app",
-    mediaUrl: "https://www.whatsapp.com",
+    Icon: FaDiscord,
+    label: "Discord",
+    logoColor: "#5865f2",
+    mediaUrl: "https://www.discord.com",
+    info: "Let's chat on Discord. My username - Tyrant#4185",
+  },
+  {
+    id: 6,
+    Icon: SiFiverr,
+    label: "Fiverr",
+    logoColor: "#00b22d",
+    mediaUrl: "https://www.fiverr.com/sunnyislam990",
+    info: "Hire me on fiverr as freelancer",
   },
 ]
 
@@ -167,7 +194,15 @@ export const quoteData: TestimonialData = {
 
 export const statisticsData: StatisticsData[] = [
   {
-    title: "articles",
-    info: "10",
+    title: "stack",
+    info: "MERN or T3",
+  },
+  {
+    title: "projects",
+    info: "70+",
+  },
+  {
+    title: "clients",
+    info: "40+",
   },
 ]

@@ -1,16 +1,59 @@
+import { useEffect, useState } from "react"
+import { socialMedia, statisticsData } from "../../data"
 import Title from "../Title"
+import LinkListItem from "./LinkListItem"
+import Statistic from "./Statistic"
+
+async function fetchData(url: string) {
+  const response = await fetch(url)
+  const data = await response.json()
+  return data
+}
 
 export default function Stats() {
+  const [pageViews, setPageViews] = useState<number>(0)
+  const [totalArticles, setTotalArticles] = useState<number>(0)
+  const [articleReactions, setArticleReactions] = useState<number>(0)
+
+  useEffect(() => {
+    async function fetchApiData(): Promise<void> {
+      const apiData = await Promise.all<number>([
+        fetchData("/api/dev/totalArticles"),
+        fetchData("/api/dev/reactions"),
+        fetchData("/api/analytics/traffics"),
+      ])
+      apiData[0] && setTotalArticles(apiData[0])
+      apiData[1] && setArticleReactions(apiData[1])
+      apiData[2] && setPageViews(apiData[2])
+    }
+    fetchApiData()
+  }, [])
+
   return (
-    <section>
+    <section className="h-full overflow-y-scroll myScroll">
       <Title name="statistics" />
-      <ul className="grid grid-cols-3 gap-5 px-12 py-8">
-        <li className="rounded-xl bg-gray-800 py-4 px-8">
-          <h3 className="text-3xl mb-2.5 tracking-wider font-medium capitalize text-white">
-            age
-          </h3>
-          <p className="text-[1.6rem] text-gray-400">19</p>
-        </li>
+      <ul className="grid grid-cols-1 gap-5 px-12 py-8 sm:grid-cols-2 md:grid-cols-3">
+        <Statistic title="page views" info={pageViews} />
+        <Statistic
+          title="articles"
+          info={totalArticles}
+          externalLink="https://dev.to/arafat4693"
+        />
+        <Statistic
+          title="total reactions"
+          info={articleReactions}
+          externalLink="https://dev.to/arafat4693"
+        />
+        {statisticsData.map((s, i) => (
+          <Statistic key={i} title={s.title} info={s.info} />
+        ))}
+      </ul>
+
+      <Title name="links" />
+      <ul className="px-12 py-8 mb-8 space-y-6">
+        {socialMedia.map((sm) => (
+          <LinkListItem key={sm.id} socialMedia={sm} />
+        ))}
       </ul>
     </section>
   )
