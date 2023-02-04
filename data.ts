@@ -19,6 +19,7 @@ import {
 } from "react-icons/si"
 import About from "./components/aboutPage/About"
 import Blogs from "./components/blogsPage/Blogs"
+import DevBlogs from "./components/blogsPage/DevBlogs"
 import Contact from "./components/contactPage/Contact"
 import GuestBook from "./components/guestbookPage/GuestBook"
 import Resume from "./components/resumePage/Resume"
@@ -56,7 +57,7 @@ export const menus: MenuData[] = [
     id: 4,
     label: "blog",
     Icon: FaRegNewspaper,
-    Component: Blogs,
+    Component: DevBlogs,
   },
   {
     id: 5,
