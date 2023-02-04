@@ -2,7 +2,6 @@ import { Dispatch, MouseEvent, SetStateAction } from "react"
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
 import Skeleton from "react-loading-skeleton"
 import { useFetch } from "../../hooks/useFetch"
-import { blog } from "../../types"
 import SkeletonWrapper from "../SkeletonWrapper"
 
 interface Props {
@@ -10,7 +9,6 @@ interface Props {
   postsPerPage: number
   setCurrentPage: Dispatch<SetStateAction<number>>
   onLoadMore: any
-  setFilteredBlogs: Dispatch<SetStateAction<blog[] | undefined>>
 }
 
 export default function DevPagination({
@@ -18,7 +16,6 @@ export default function DevPagination({
   postsPerPage,
   setCurrentPage,
   onLoadMore,
-  setFilteredBlogs,
 }: Props) {
   const { data: totalBlogs, isError } = useFetch<number>(
     `/api/dev/totalArticles`
