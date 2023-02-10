@@ -17,14 +17,25 @@ export default function Stats() {
 
   useEffect(() => {
     async function fetchApiData(): Promise<void> {
-      const apiData = await Promise.all<number>([
+      const apiData = await Promise.allSettled<{
+        status: "fulfilled" | "rejected"
+        value?: number
+        reason?: string
+      }>([
         fetchData("/api/dev/totalArticles"),
         fetchData("/api/dev/reactions"),
         fetchData("/api/analytics/traffics"),
       ])
-      apiData[0] && setTotalArticles(apiData[0])
-      apiData[1] && setArticleReactions(apiData[1])
-      apiData[2] && setPageViews(apiData[2])
+
+      apiData[0].status === "fulfilled" &&
+        typeof apiData[0].value === "number" &&
+        setTotalArticles(apiData[0].value)
+      apiData[1].status === "fulfilled" &&
+        typeof apiData[1].value === "number" &&
+        setArticleReactions(apiData[1].value)
+      apiData[2].status === "fulfilled" &&
+        typeof apiData[2].value === "number" &&
+        setPageViews(apiData[2].value)
     }
     fetchApiData()
   }, [])
