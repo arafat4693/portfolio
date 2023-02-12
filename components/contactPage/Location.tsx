@@ -11,9 +11,9 @@ export default function Location() {
         referrerPolicy="no-referrer-when-downgrade"
         className="w-full h-96"
       ></iframe>
-      <ul className="location grid grid-cols-1 sm:grid-cols-2 mt-10 gap-y-2">
+      <ul className="grid grid-cols-1 mt-10 location sm:grid-cols-2 gap-y-2">
         <MyInfo field="address" value="Stockholm, Sweden" />
-        <MyInfo field="email" value="wellborn@example.com" />
+        <MyInfo field="email" value="islamarafat171@gmail.com" />
         <MyInfo field="phone" value="+123 654 78900" />
         <MyInfo field="freelance" value="Available" />
       </ul>

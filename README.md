@@ -1,3 +1,11 @@
+# Docs
+
+Please refer to [this](https://dev.to/arafat4693/how-i-built-my-fullstack-and-typesafe-portfolio-website-26ia) article to learn more about the website. Thank you😊
+
+> Here I am using a graphQL CMS called Hygraph. So If you want run this project on your machine, make sure first that your hygraph is completely configured.
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
