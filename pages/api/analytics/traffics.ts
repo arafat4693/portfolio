@@ -1,7 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next"
 import { BetaAnalyticsDataClient } from "@google-analytics/data"
-import pk from "../../../GAPK"
 
 // 👇 Setting PropertyId
 const propertyId = process.env.NEXT_PUBLIC_GA_PROPERTY_ID
