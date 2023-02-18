@@ -3,8 +3,17 @@ import type { AppProps } from "next/app"
 import { ApolloProvider } from "@apollo/client"
 import client from "../apollo-client"
 import Script from "next/script"
+import { useEffect } from "react"
+import { useChangeTitle } from "../hooks/useChangeTitle"
 
 function MyApp({ Component, pageProps }: AppProps) {
+
+  const { originalTitle, setOriginalTitle } = useChangeTitle("😭 PLEASE COME BACK!!")
+
+  useEffect(() => {
+    if(!originalTitle) setOriginalTitle(document.title)
+  }, [originalTitle])
+
   return (
     <ApolloProvider client={client}>
       <Script
