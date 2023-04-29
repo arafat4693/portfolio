@@ -125,8 +125,8 @@ export async function getStaticProps() {
   return {
     props: {
       profileData: data.profiles[0],
-      revalidate: 3600,
     },
+    revalidate: 3600,
   }
 }
 
