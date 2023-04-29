@@ -16,7 +16,7 @@ export default function ProfileCard({ profileData }: Props) {
       <div className="relative z-40 w-full h-full myShadow">
         <Slide images={profileData.bgImages} />
 
-        <div className="relative z-20 w-56 h-56 mx-auto -mt-36 rounded-full profilePic">
+        <div className="relative z-20 w-56 h-56 mx-auto rounded-full -mt-36 profilePic">
           <img
             src={profileData.ownersPhoto.url}
             alt="userPic"
@@ -31,7 +31,7 @@ export default function ProfileCard({ profileData }: Props) {
         <Typing />
         <MediaIcons />
 
-        <div className="flex absolute bottom-0 left-0 w-full h-28 borderLeft customLine">
+        <div className="absolute bottom-0 left-0 flex w-full h-28 borderLeft customLine">
           <MyLink
             name="download cv"
             Icon={BsFillCloudArrowDownFill}
@@ -41,7 +41,7 @@ export default function ProfileCard({ profileData }: Props) {
           <MyLink
             name="my linkedin"
             Icon={AiFillLinkedin}
-            url="https://www.linkedin.com"
+            url="https://www.linkedin.com/in/arafat-freelancer"
           />
         </div>
       </div>
