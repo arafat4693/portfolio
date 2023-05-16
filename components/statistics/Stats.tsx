@@ -44,7 +44,7 @@ export default function Stats() {
     <section className="h-full overflow-y-scroll myScroll">
       <Title name="statistics" />
       <ul className="grid grid-cols-1 gap-5 px-12 py-8 sm:grid-cols-2 md:grid-cols-3">
-        <Statistic title="page views" info={pageViews} />
+        <Statistic title="Weekly views" info={pageViews} />
         <Statistic
           title="articles"
           info={totalArticles}
