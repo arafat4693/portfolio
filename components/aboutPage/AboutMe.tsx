@@ -29,8 +29,8 @@ export default function AboutMe() {
         </ReactMarkdown>
       </article>
 
-      <ul className="location grid grid-cols-1 sm:grid-cols-2 mt-6 gap-y-2">
-        <MyInfo field="age" value="19" />
+      <ul className="grid grid-cols-1 mt-6 location sm:grid-cols-2 gap-y-2">
+        <MyInfo field="age" value="21" />
         <MyInfo field="residence" value="Sweden" />
         <MyInfo field="freelance" value="Available" />
         <MyInfo field="address" value="Stockholm, Sweden" />
